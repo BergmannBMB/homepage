@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Mapping-Matrix Seite 2 – Hotspots, Anwendung, Signale</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Playfair+Display:wght@700;900&display=swap');
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4 landscape; margin: 0; }
+  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .poster { box-shadow: none; } }
+  body { background: #d0cec9; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'DM Sans', sans-serif; }
+  .poster { width: 297mm; height: 210mm; background: #ffffff; position: relative; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.2); }
+  .poster::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(26,60,100,0.02) 1px, transparent 1px); background-size: 14px 14px; z-index: 0; }
+  .accent-bar { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #1a3c64 0%, #1a3c64 60%, #e87a1e 80%, #e87a1e 100%); z-index: 10; }
+
+  .header { position: relative; z-index: 2; padding: 7mm 14mm 0 14mm; display: flex; justify-content: space-between; align-items: flex-start; }
+  .header-left h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 18pt; color: #1a3c64; line-height: 1.15; }
+  .header-left h1 span { color: #e87a1e; }
+  .header-left .subtitle { font-size: 7.5pt; color: #7a8a9e; margin-top: 1.5mm; }
+  .header-right .meta { font-size: 6pt; color: #99a8b8; }
+  .header-right .page-badge { display: inline-block; background: #e87a1e; color: #fff; font-size: 5.5pt; font-weight: 700; padding: 1mm 3mm; border-radius: 2px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5mm; }
+
+  /* Section 1: Hotspot Map */
+  .section-label { position: relative; z-index: 2; padding: 4mm 14mm 0 14mm; }
+  .section-tag { font-size: 5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #bcc5d0; }
+  .section-tag span { color: #e87a1e; }
+
+  .hotspot-section { position: relative; z-index: 2; padding: 3mm 14mm 0 14mm; display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+
+  .hotspot-card { border-radius: 4px; padding: 4mm 5mm; position: relative; overflow: hidden; }
+  .hotspot-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
+
+  .hotspot-priority { border: 1px solid #c0392b; background: linear-gradient(135deg, rgba(192,57,43,0.04) 0%, rgba(255,255,255,0) 100%); }
+  .hotspot-priority::before { background: #c0392b; }
+
+  .hotspot-positioning { border: 1px solid #e87a1e; background: linear-gradient(135deg, rgba(232,122,30,0.04) 0%, rgba(255,255,255,0) 100%); }
+  .hotspot-positioning::before { background: #e87a1e; }
+
+  .hotspot-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2.5mm; }
+  .hotspot-badge-red { background: #c0392b; color: #fff; font-size: 4.5pt; font-weight: 700; padding: 0.8mm 2.5mm; border-radius: 2px; letter-spacing: 0.8px; text-transform: uppercase; }
+  .hotspot-badge-orange { background: #e87a1e; color: #fff; font-size: 4.5pt; font-weight: 700; padding: 0.8mm 2.5mm; border-radius: 2px; letter-spacing: 0.8px; text-transform: uppercase; }
+
+  .hotspot-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 11pt; line-height: 1.15; }
+  .hotspot-priority .hotspot-title { color: #c0392b; }
+  .hotspot-positioning .hotspot-title { color: #e87a1e; }
+
+  .hotspot-dims { font-size: 5.5pt; color: #5a6a7e; margin-bottom: 2mm; font-weight: 500; }
+  .hotspot-dims strong { color: #1a3c64; }
+
+  .hotspot-desc { font-size: 6pt; color: #1a3c64; font-weight: 700; line-height: 1.4; margin-bottom: 2mm; }
+
+  .hotspot-format { background: rgba(26,60,100,0.05); border-radius: 3px; padding: 2.5mm 3mm; }
+  .hotspot-format-label { font-size: 4.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #99a8b8; margin-bottom: 1mm; }
+  .hotspot-format-text { font-size: 5.5pt; color: #1a3c64; line-height: 1.4; }
+  .hotspot-format-text strong { color: #e87a1e; }
+
+  /* Section 2: Signal Map */
+  .signals-section { position: relative; z-index: 2; padding: 4mm 14mm 0 14mm; }
+  .signals-intro { font-size: 6pt; color: #7a8a9e; margin-bottom: 3mm; line-height: 1.4; }
+
+  .signal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; }
+
+  .signal-card { background: #f7f8fa; border: 1px solid #e9ecf0; border-radius: 3px; padding: 2.5mm 3mm; position: relative; }
+  .signal-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; border-radius: 3px 3px 0 0; }
+
+  .signal-card.red::before { background: #c0392b; }
+  .signal-card.orange::before { background: #e87a1e; }
+  .signal-card.blue::before { background: #1a3c64; }
+  .signal-card.teal::before { background: #2a5a8c; }
+
+  .signal-code { font-size: 5pt; font-weight: 700; color: #99a8b8; letter-spacing: 0.5px; margin-bottom: 0.8mm; }
+  .signal-code span.red { color: #c0392b; }
+  .signal-code span.orange { color: #e87a1e; }
+  .signal-code span.blue { color: #1a3c64; }
+  .signal-code span.teal { color: #2a5a8c; }
+
+  .signal-name { font-size: 5.5pt; font-weight: 700; color: #1a3c64; margin-bottom: 0.5mm; line-height: 1.25; }
+  .signal-indicator { font-size: 5pt; color: #e87a1e; font-style: italic; line-height: 1.3; }
+  .signal-metric { font-size: 4.5pt; color: #7a8a9e; line-height: 1.3; margin-top: 0.5mm; }
+
+  /* Section 3: Reading Guide */
+  .reading-section { position: relative; z-index: 2; padding: 4mm 14mm 0 14mm; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+
+  .reading-card { background: #1a3c64; border-radius: 3px; padding: 3mm 3.5mm; }
+  .reading-num { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 14pt; color: #e87a1e; line-height: 1; margin-bottom: 1mm; }
+  .reading-title { font-size: 6pt; font-weight: 700; color: #ffffff; margin-bottom: 1mm; }
+  .reading-text { font-size: 5pt; color: rgba(255,255,255,0.5); line-height: 1.35; }
+
+  .footer { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 2.5mm 14mm; display: flex; justify-content: space-between; align-items: center; background: #1a3c64; }
+  .footer-left { font-size: 5.5pt; color: rgba(255,255,255,0.6); }
+  .footer-right { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 7pt; color: rgba(255,255,255,0.8); font-style: italic; }
+  .footer-right span { color: #e87a1e; font-style: normal; }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="accent-bar"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Hotspots, <span>Formate &amp; Fr&uuml;hwarnsignale</span></h1>
+      <div class="subtitle">Anwendungsebene der Mapping-Matrix: Wo ansetzen, was anbieten, woran erkennen</div>
+    </div>
+    <div class="header-right">
+      
+      <div class="meta">BMB Deutschland GmbH &middot; 03. M&auml;rz 2026</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: HOTSPOTS -->
+  <div class="section-label"><span class="section-tag"><span>01</span> &mdash; Zwei strategische Hotspots</span></div>
+
+  <div class="hotspot-section">
+    <!-- Hotspot A: Top Priority -->
+    <div class="hotspot-card hotspot-priority">
+      <div class="hotspot-header">
+        <div class="hotspot-title">B2 &times; D2 / D3 / D6 / D8</div>
+        <div class="hotspot-badge-red">Top Priority</div>
+      </div>
+      <div class="hotspot-dims"><strong>Kontrollverlust</strong> trifft auf Orientierung, Wirksamkeit, Entlastung und Identit&auml;t</div>
+      <div class="hotspot-desc">Der aggressivste Cluster: Entscheider verstehen die Lage nicht mehr, k&ouml;nnen nicht handeln, sind &uuml;berlastet und wissen nicht mehr, welche Rolle sie spielen sollen.</div>
+      <div class="hotspot-format">
+        <div class="hotspot-format-label">Angebotsantwort</div>
+        <div class="hotspot-format-text"><strong>Guided Outcomes mit Fixpreis-Garantie</strong> &mdash; Diagnose &rarr; 3 Optionen &rarr; Pfad mit Meilensteinen &rarr; Begleitung inkl. Enablement. Fixpreis senkt Kaufhemmung, Ergebnisgarantie schafft Vertrauen. Format: 4&ndash;6 Wochen Pilot mit definiertem Scope und messbarem Output.</div>
+      </div>
+    </div>
+
+    <!-- Hotspot B: Positioning -->
+    <div class="hotspot-card hotspot-positioning">
+      <div class="hotspot-header">
+        <div class="hotspot-title">B3 &times; D2 / D4 / D5 / D8</div>
+        <div class="hotspot-badge-orange">Positionierungs-Hebel</div>
+      </div>
+      <div class="hotspot-dims"><strong>Eindeutigkeitssehnsucht</strong> trifft auf Wahrheit, Zugeh&ouml;rigkeit, Sinn und Identit&auml;t</div>
+      <div class="hotspot-desc">Der tiefe Cluster: Kunden suchen nicht Features, sondern jemanden, der Haltung zeigt, Gemeinschaft erm&ouml;glicht und Sinn greifbar macht &mdash; ohne Ideologie.</div>
+      <div class="hotspot-format">
+        <div class="hotspot-format-label">Angebotsantwort</div>
+        <div class="hotspot-format-text"><strong>Haltungspositionierung + Community-Format</strong> &mdash; Point-of-View-Workshop (Wof&uuml;r stehen wir?) &rarr; Prinzipien operationalisieren &rarr; Peer-Format f&uuml;r F&uuml;hrungskr&auml;fte (Sparring, Reflexion, gemeinsame Standortbestimmung). Kein Coaching-Silo, sondern gesch&uuml;tzter Austauschraum.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: SIGNALS -->
+  <div class="section-label"><span class="section-tag"><span>02</span> &mdash; Fr&uuml;hwarnsignale: Woran man die Treffer in der Praxis erkennt</span></div>
+
+  <div class="signals-section">
+    <div class="signal-grid">
+      <div class="signal-card red">
+        <div class="signal-code"><span class="red">D6 &times; B1</span></div>
+        <div class="signal-name">Dauerlast durch Krisenmodus</div>
+        <div class="signal-indicator">&bdquo;Wir funktionieren nur noch&ldquo;</div>
+        <div class="signal-metric">Signale: Dauer-&Uuml;berstunden, hohe Krankheitstage, Entscheidungsstau, erh&ouml;hte Fluktuation im mittleren Management</div>
+      </div>
+      <div class="signal-card red">
+        <div class="signal-code"><span class="red">D8 &times; B2</span></div>
+        <div class="signal-name">Rollenunklarheit bei F&uuml;hrung</div>
+        <div class="signal-indicator">&bdquo;Ich wei&szlig; nicht mehr, was mein Job ist&ldquo;</div>
+        <div class="signal-metric">Signale: F&uuml;hrungskr&auml;fte-Rotation, R&uuml;ckzug in Fachaufgaben, Coaching-Nachfrage steigt, Entscheidungen werden nach oben delegiert</div>
+      </div>
+      <div class="signal-card orange">
+        <div class="signal-code"><span class="orange">D2 &times; B4</span></div>
+        <div class="signal-name">Vertrauenskollaps</div>
+        <div class="signal-indicator">&bdquo;Wir glauben den Zahlen nicht mehr&ldquo;</div>
+        <div class="signal-metric">Signale: Parallele Datenerhebungen, Berater-Hopping, Skepsis gegen&uuml;ber interner Kommunikation, steigende Audit-Nachfrage</div>
+      </div>
+      <div class="signal-card orange">
+        <div class="signal-code"><span class="orange">D4 &times; B3</span></div>
+        <div class="signal-name">Lagerzwang im Team</div>
+        <div class="signal-indicator">&bdquo;Man muss aufpassen, was man sagt&ldquo;</div>
+        <div class="signal-metric">Signale: R&uuml;ckgang offener Wortmeldungen, Cliquen&shy;bildung, erh&ouml;hte HR-Beschwerden, Schweigen in Meetings</div>
+      </div>
+      <div class="signal-card blue">
+        <div class="signal-code"><span class="blue">D3 &times; B5</span></div>
+        <div class="signal-name">Erlernte Hilflosigkeit</div>
+        <div class="signal-indicator">&bdquo;Bringt eh nichts, was wir vorschlagen&ldquo;</div>
+        <div class="signal-metric">Signale: Sinkende Innovationsquote, Dienst nach Vorschrift, wenig Eigeninitiative, Zynismus in Retrospektiven</div>
+      </div>
+      <div class="signal-card blue">
+        <div class="signal-code"><span class="blue">D5 &times; B5</span></div>
+        <div class="signal-name">Sinnvakuum</div>
+        <div class="signal-indicator">&bdquo;Wir machen Projekte, aber wozu?&ldquo;</div>
+        <div class="signal-metric">Signale: Purpose-Workshops ohne Folge&shy;wirkung, steigende K&uuml;ndigungen trotz guter Bezahlung, fehlende Strategiebindung</div>
+      </div>
+      <div class="signal-card teal">
+        <div class="signal-code"><span class="teal">D7 &times; B1</span></div>
+        <div class="signal-name">Abstiegsangst trotz Leistung</div>
+        <div class="signal-indicator">&bdquo;Ich strenge mich an, aber es wird nicht besser&ldquo;</div>
+        <div class="signal-metric">Signale: Gehalts&shy;verhandlungs-H&auml;ufung, Neid-Dynamiken, Widerstand gegen Ver&auml;nderung, Mikro-Kontrolle</div>
+      </div>
+      <div class="signal-card teal">
+        <div class="signal-code"><span class="teal">D1 &times; B4</span></div>
+        <div class="signal-name">Institutionenverfall</div>
+        <div class="signal-indicator">&bdquo;Auf wen soll ich mich verlassen?&ldquo;</div>
+        <div class="signal-metric">Signale: Parallele Absicherungs&shy;strategien, sinkende Mitarbeiter&shy;bindung an Betriebsr&auml;te/Verb&auml;nde, Vertragspr&uuml;fungen durch Externe</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: READING GUIDE -->
+  <div class="section-label"><span class="section-tag"><span>03</span> &mdash; So nutzt du die Matrix operativ</span></div>
+
+  <div class="reading-section">
+    <div class="reading-card">
+      <div class="reading-num">A</div>
+      <div class="reading-title">Kundengespr&auml;ch / Discovery</div>
+      <div class="reading-text">Signale im Gespr&auml;ch identifizieren &rarr; auf der Matrix verorten &rarr; gezielt nach benachbarten Feldern fragen. Die Zwei-Wort-Hinweise der Zellen funktionieren als Gespr&auml;chsanker.</div>
+    </div>
+    <div class="reading-card">
+      <div class="reading-num">B</div>
+      <div class="reading-title">Angebotsdesign</div>
+      <div class="reading-text">Hotspot identifizieren &rarr; passendes Format w&auml;hlen (Guided Outcome oder Community) &rarr; Dimensionen als Erfolgskriterien definieren. Jedes Angebot sollte mind. 2 Dimensionen gleichzeitig bedienen.</div>
+    </div>
+    <div class="reading-card">
+      <div class="reading-num">C</div>
+      <div class="reading-title">Workshop / Strategietag</div>
+      <div class="reading-text">Matrix ausdrucken &rarr; Team gemeinsam Dots setzen lassen (&bdquo;Wo stehen unsere Kunden?&ldquo;) &rarr; Cluster bilden &rarr; Angebotsportfolio gegen die Treffer mappen &rarr; L&uuml;cken identifizieren.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">BMB Deutschland GmbH &middot; Zwei-Ebenen-Modell: Marktlogik &times; Menschenlogik &middot; </div>
+    <div class="footer-right">Anwendungsprinzip: <span>Signal erkennen &rarr; Matrix verorten &rarr; Format w&auml;hlen &rarr; Dimensionen bedienen</span></div>
+  </div>
+</div>
+</body>
+</html>
