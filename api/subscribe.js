@@ -1,0 +1,154 @@
+export default async function handler(req, res) {
+  // CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    const { vorname, nachname, email, unternehmen, position, branche, groesse, nachricht, newsletter } = req.body;
+
+    if (!vorname || !nachname || !email || !unternehmen) {
+      return res.status(400).json({ error: 'Pflichtfelder fehlen' });
+    }
+
+    // 1. Create/update contact in Brevo
+    const contactPayload = {
+      email: email,
+      attributes: {
+        VORNAME: vorname,
+        NACHNAME: nachname,
+        FIRMA: unternehmen,
+        POSITION: position || '',
+        BRANCHE: branche || '',
+        GROESSE: groesse || '',
+        HERAUSFORDERUNG: nachricht || ''
+      },
+      listIds: newsletter === 'ja' ? [2, 3] : [2],
+      // listIds: [2] = Whitepaper-Liste, [3] = Newsletter-Liste
+      // Passe die IDs an deine Brevo-Listen an!
+      updateEnabled: true
+    };
+
+    const contactResponse = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'api-key': process.env.SMTP
+      },
+      body: JSON.stringify(contactPayload)
+    });
+
+    const contactResult = await contactResponse.json();
+
+    // Contact might already exist (status 204 or duplicate error) — that's fine
+    if (!contactResponse.ok && contactResult.code !== 'duplicate_parameter') {
+      console.error('Brevo contact error:', contactResult);
+    }
+
+    // 2. Send Double Opt-in confirmation email
+    const emailPayload = {
+      sender: {
+        name: 'BMB Deutschland',
+        email: 'info@bmbdeutschland.de'
+      },
+      to: [{ email: email, name: vorname + ' ' + nachname }],
+      subject: 'Bitte bestätigen: Ihr Whitepaper-Download — BMB HumanFit Matrix',
+      htmlContent: `
+        <div style="font-family: 'Gill Sans MT', Calibri, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; color: #1a2b3c;">
+          <div style="border-bottom: 2px solid #e87425; padding-bottom: 16px; margin-bottom: 24px;">
+            <strong style="font-size: 18px; color: #1a3b55;">BMB</strong>
+            <span style="font-size: 18px; color: #e87425;"> HumanFit Matrix</span>
+          </div>
+          <h2 style="color: #1a3b55; font-size: 22px;">Hallo ${vorname},</h2>
+          <p style="font-size: 15px; line-height: 1.7; color: #4a6072;">
+            vielen Dank für Ihr Interesse am Whitepaper <strong>„Wenn Organisationen die falschen Fragen stellen"</strong>.
+          </p>
+          <p style="font-size: 15px; line-height: 1.7; color: #4a6072;">
+            Bitte bestätigen Sie Ihre E-Mail-Adresse, um den Download-Link zu erhalten:
+          </p>
+          <div style="text-align: center; margin: 32px 0;">
+            <a href="https://homepage-five-ecru.vercel.app/api/confirm?email=${encodeURIComponent(email)}&token=${Buffer.from(email + ':' + Date.now()).toString('base64')}"
+               style="background: #e87425; color: #fff; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-block;">
+              Ja, E-Mail bestätigen →
+            </a>
+          </div>
+          <p style="font-size: 13px; color: #7a8d9e; line-height: 1.6;">
+            Sie erhalten diese E-Mail, weil Sie auf bmbdeutschland.de das Whitepaper angefordert haben.
+            Falls Sie diese Anfrage nicht gestellt haben, ignorieren Sie diese E-Mail einfach.
+          </p>
+          <hr style="border: none; border-top: 1px solid #edf0f4; margin: 24px 0;">
+          <p style="font-size: 12px; color: #7a8d9e;">
+            © 2026 BMB Deutschland GmbH · Mittelstraße 23 · 40721 Hilden<br>
+            <a href="mailto:info@bmbdeutschland.de" style="color: #e87425;">info@bmbdeutschland.de</a>
+          </p>
+        </div>
+      `
+    };
+
+    // BCC an info@ damit du jede Anfrage siehst
+    emailPayload.bcc = [{ email: 'info@bmbdeutschland.de', name: 'BMB Deutschland' }];
+
+    const emailResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'api-key': process.env.SMTP
+      },
+      body: JSON.stringify(emailPayload)
+    });
+
+    if (!emailResponse.ok) {
+      const emailError = await emailResponse.json();
+      console.error('Brevo email error:', emailError);
+      return res.status(500).json({ error: 'E-Mail konnte nicht gesendet werden' });
+    }
+
+    // 3. Send notification to BMB
+    const notifyPayload = {
+      sender: { name: 'BMB Website', email: 'info@bmbdeutschland.de' },
+      to: [{ email: 'info@bmbdeutschland.de', name: 'BMB Deutschland' }],
+      subject: `Neuer Whitepaper-Download: ${vorname} ${nachname} — ${unternehmen}`,
+      htmlContent: `
+        <div style="font-family: sans-serif; padding: 20px; color: #333;">
+          <h2 style="color: #1a3b55;">Neuer Whitepaper-Download</h2>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Name</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${vorname} ${nachname}</td></tr>
+            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">E-Mail</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${email}</td></tr>
+            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Unternehmen</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${unternehmen}</td></tr>
+            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Position</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${position || '–'}</td></tr>
+            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Branche</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${branche || '–'}</td></tr>
+            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Größe</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${groesse || '–'}</td></tr>
+            <tr><td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Newsletter</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${newsletter === 'ja' ? '✅ Ja' : '❌ Nein'}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Herausforderung</td><td style="padding: 8px;">${nachricht || '–'}</td></tr>
+          </table>
+        </div>
+      `
+    };
+
+    await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'api-key': process.env.SMTP
+      },
+      body: JSON.stringify(notifyPayload)
+    });
+
+    return res.status(200).json({ success: true, message: 'Anfrage erhalten. Bestätigungs-E-Mail gesendet.' });
+
+  } catch (error) {
+    console.error('Server error:', error);
+    return res.status(500).json({ error: 'Interner Serverfehler' });
+  }
+}
