@@ -3,23 +3,18 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
-
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
-
   try {
     const { vorname, nachname, email, unternehmen, position, branche, groesse, nachricht, newsletter } = req.body;
-
     if (!vorname || !nachname || !email || !unternehmen) {
       return res.status(400).json({ error: 'Pflichtfelder fehlen' });
     }
-
-    // 1. Create/update contact in Brevo
+    // 1. Kontakt in Brevo anlegen/aktualisieren
     const contactPayload = {
       email: email,
       attributes: {
@@ -32,35 +27,26 @@ export default async function handler(req, res) {
         HERAUSFORDERUNG: nachricht || ''
       },
       listIds: newsletter === 'ja' ? [2, 3] : [2],
-      // listIds: [2] = Whitepaper-Liste, [3] = Newsletter-Liste
-      // Passe die IDs an deine Brevo-Listen an!
       updateEnabled: true
     };
-
     const contactResponse = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
         'accept': 'application/json',
         'content-type': 'application/json',
-        'api-key': process.env.SMTP
+        'api-key': process.env.BREVO_API_KEY
       },
       body: JSON.stringify(contactPayload)
     });
-
     const contactResult = await contactResponse.json();
-
-    // Contact might already exist (status 204 or duplicate error) — that's fine
     if (!contactResponse.ok && contactResult.code !== 'duplicate_parameter') {
       console.error('Brevo contact error:', contactResult);
     }
-
-    // 2. Send Double Opt-in confirmation email
+    // 2. Double Opt-in Bestätigungs-E-Mail senden
     const emailPayload = {
-      sender: {
-        name: 'BMB Deutschland',
-        email: 'info@bmbdeutschland.de'
-      },
+      sender: { name: 'BMB Deutschland', email: 'info@bmbdeutschland.de' },
       to: [{ email: email, name: vorname + ' ' + nachname }],
+      bcc: [{ email: 'info@bmbdeutschland.de', name: 'BMB Deutschland' }],
       subject: 'Bitte bestätigen: Ihr Whitepaper-Download — BMB HumanFit Matrix',
       htmlContent: `
         <div style="font-family: 'Gill Sans MT', Calibri, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; color: #1a2b3c;">
@@ -93,27 +79,21 @@ export default async function handler(req, res) {
         </div>
       `
     };
-
-    // BCC an info@ damit du jede Anfrage siehst
-    emailPayload.bcc = [{ email: 'info@bmbdeutschland.de', name: 'BMB Deutschland' }];
-
     const emailResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: {
         'accept': 'application/json',
         'content-type': 'application/json',
-        'api-key': process.env.SMTP
+        'api-key': process.env.BREVO_API_KEY
       },
       body: JSON.stringify(emailPayload)
     });
-
     if (!emailResponse.ok) {
       const emailError = await emailResponse.json();
       console.error('Brevo email error:', emailError);
       return res.status(500).json({ error: 'E-Mail konnte nicht gesendet werden' });
     }
-
-    // 3. Send notification to BMB
+    // 3. Interne Benachrichtigung an BMB
     const notifyPayload = {
       sender: { name: 'BMB Website', email: 'info@bmbdeutschland.de' },
       to: [{ email: 'info@bmbdeutschland.de', name: 'BMB Deutschland' }],
@@ -134,19 +114,16 @@ export default async function handler(req, res) {
         </div>
       `
     };
-
     await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: {
         'accept': 'application/json',
         'content-type': 'application/json',
-        'api-key': process.env.SMTP
+        'api-key': process.env.BREVO_API_KEY
       },
       body: JSON.stringify(notifyPayload)
     });
-
     return res.status(200).json({ success: true, message: 'Anfrage erhalten. Bestätigungs-E-Mail gesendet.' });
-
   } catch (error) {
     console.error('Server error:', error);
     return res.status(500).json({ error: 'Interner Serverfehler' });
