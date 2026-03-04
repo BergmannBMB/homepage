@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     const { vorname, nachname, email, unternehmen, position, branche, groesse, nachricht, newsletter } = req.body;
     if (!vorname || !nachname || !email || !unternehmen) {
       return res.status(400).json({ error: 'Pflichtfelder fehlen' });
-    }
+    }h
     // 1. Kontakt in Brevo anlegen/aktualisieren
     const contactPayload = {
       email: email,
@@ -44,9 +44,9 @@ export default async function handler(req, res) {
     }
     // 2. Double Opt-in Bestätigungs-E-Mail senden
     const emailPayload = {
-      sender: { name: 'BMB Deutschland', email: 'info@bmbdeutschland.de' },
+      sender: { name: 'BMB Deutschland', email: 'bergmann.bmb@gmail.com' },
       to: [{ email: email, name: vorname + ' ' + nachname }],
-      bcc: [{ email: 'info@bmbdeutschland.de', name: 'BMB Deutschland' }],
+      bcc: [{ email: 'bergmann.bmb@gmail.com', name: 'BMB Deutschland' }],
       subject: 'Bitte bestätigen: Ihr Whitepaper-Download — BMB HumanFit Matrix',
       htmlContent: `
         <div style="font-family: 'Gill Sans MT', Calibri, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; color: #1a2b3c;">
@@ -95,8 +95,8 @@ export default async function handler(req, res) {
     }
     // 3. Interne Benachrichtigung an BMB
     const notifyPayload = {
-      sender: { name: 'BMB Website', email: 'info@bmbdeutschland.de' },
-      to: [{ email: 'info@bmbdeutschland.de', name: 'BMB Deutschland' }],
+      sender: { name: 'BMB Website', email: 'bergmann.bmb@gmail.com' },
+      to: [{ email: 'bergmann.bmb@gmail.com', name: 'BMB Deutschland' }],
       subject: `Neuer Whitepaper-Download: ${vorname} ${nachname} — ${unternehmen}`,
       htmlContent: `
         <div style="font-family: sans-serif; padding: 20px; color: #333;">
