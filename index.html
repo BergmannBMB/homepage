@@ -125,7 +125,7 @@
 <div class="cif fi"><h3>Was Sie erhalten</h3><p>Das Whitepaper mit 5&times;8 HumanFit Matrix, Industrie-Case (4.200 MA, +11pp FCR, +18pp Empathie), operativen Runbooks und f&uuml;nf Fragen zur Selbstdiagnose.</p>
 <ul class="cd"><li><div class="ico">&#9993;</div><div>info@bmbdeutschland.de</div></li><li><div class="ico">&#127760;</div><div>www.bmbdeutschland.de</div></li><li><div class="ico">&#128205;</div><div>Mittelstra&szlig;e 23, 40721 Hilden</div></li><li><div class="ico">&#9742;</div><div>+49 (0) 2103 / 33 399 - 0</div></li></ul></div>
 <div class="fc fi">
-<form id="cF" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+<form id="cF" method="POST" novalidate>
 <input type="text" name="_gotcha" style="display:none"><input type="hidden" name="_subject" value="Whitepaper: BMB HumanFit Matrix - Von Bed&uuml;rfnissen zu Outcomes">
 <div class="fr"><div class="fg"><label>Vorname <span class="rq">*</span></label><input type="text" name="vorname" required placeholder="Ihr Vorname"></div><div class="fg"><label>Nachname <span class="rq">*</span></label><input type="text" name="nachname" required placeholder="Ihr Nachname"></div></div>
 <div class="fg"><label>E-Mail <span class="rq">*</span></label><input type="email" name="email" required placeholder="ihre.email@unternehmen.de"></div>
@@ -154,7 +154,7 @@ e.preventDefault();var f=this,v=true;
 f.querySelectorAll('[required]').forEach(function(i){if(i.type==='checkbox'&&!i.checked){i.parentElement.style.color='#c0392b';v=false}else if(i.type!=='checkbox'&&!i.value.trim()){i.style.borderColor='#c0392b';v=false}else{i.style.borderColor='';if(i.parentElement)i.parentElement.style.color=''}});
 var em=f.querySelector('[name=email]');if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)){em.style.borderColor='#c0392b';v=false}
 if(!v)return;var b=document.getElementById('sB');b.disabled=true;b.textContent='Wird gesendet...';
-fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){if(r.ok){document.getElementById('fS').style.display='block';document.getElementById('fE').style.display='none';f.reset();b.textContent='\u2713 Gesendet!'}else{throw new Error('x')}}).catch(function(){document.getElementById('fE').style.display='block';b.disabled=false;b.textContent='Whitepaper anfordern \u2192'})
+var data={vorname:f.querySelector('[name=vorname]').value,nachname:f.querySelector('[name=nachname]').value,email:f.querySelector('[name=email]').value,unternehmen:f.querySelector('[name=unternehmen]').value,position:f.querySelector('[name=position]').value,branche:f.querySelector('[name=branche]').value,groesse:f.querySelector('[name=groesse]').value,nachricht:f.querySelector('[name=nachricht]').value,newsletter:f.querySelector('[name=newsletter]').checked?'ja':'nein'};fetch('/api/subscribe',{method:'POST',body:JSON.stringify(data),headers:{'Content-Type':'application/json'}}).then(function(r){if(r.ok){document.getElementById('fS').style.display='block';document.getElementById('fE').style.display='none';f.reset();b.textContent='\u2713 Gesendet!'}else{throw new Error('x')}}).catch(function(){document.getElementById('fE').style.display='block';b.disabled=false;b.textContent='Whitepaper kostenlos anfordern \u2192'})
 });
 </script>
 </body></html>
