@@ -308,6 +308,30 @@ img{max-width:100%;display:block;height:auto}
   .ft-i{flex-direction:column;align-items:flex-start}
   .ft-lk{flex-wrap:wrap;gap:14px}
 }
+
+  /* ── Danke-Card ── */
+  #dankebox { display:none; }
+  .danke-card { background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.3); max-width:580px; margin:0 auto; }
+  .danke-card .dc-bar { background:#E87425; height:4px; }
+  .danke-card .dc-body { padding:48px 52px 36px; }
+  .danke-card .dc-logo { text-align:center; margin-bottom:36px; }
+  .danke-card .dc-headline { text-align:center; margin-bottom:32px; }
+  .danke-card .dc-headline h2 { font-size:26px; font-weight:700; color:#0D1B3E; font-family:'Gill Sans MT', 'Gill Sans', Calibri, Arial, sans-serif; line-height:1.3; margin-bottom:4px; }
+  .danke-card .dc-name { font-size:22px; font-weight:700; color:#E87425; font-family:'Gill Sans MT', 'Gill Sans', Calibri, Arial, sans-serif; margin-bottom:16px; }
+  .danke-card .dc-sub { font-size:15px; color:#6B7280; font-family:'Gill Sans MT', 'Gill Sans', Calibri, Arial, sans-serif; line-height:1.7; }
+  .danke-card .dc-label { font-size:11px; font-weight:700; letter-spacing:2px; color:#9CA3AF; text-transform:uppercase; font-family:'Gill Sans MT', 'Gill Sans', Calibri, Arial, sans-serif; margin-bottom:14px; }
+  .danke-card .dc-hr { border:none; border-top:1px solid #E8E9EC; margin:24px 0; }
+  .danke-card .dc-bullet td { font-family:'Gill Sans MT', 'Gill Sans', Calibri, Arial, sans-serif; }
+  .danke-card .dc-dot { width:7px; height:7px; background:#E87425; border-radius:50%; margin-top:6px; }
+  .danke-card .dc-cta { display:block; border-radius:4px; padding:14px 16px; text-align:center; text-decoration:none; font-size:14px; font-weight:700; font-family:'Gill Sans MT', 'Gill Sans', Calibri, Arial, sans-serif; color:#fff; }
+  .danke-card .dc-cta-orange { background:#E87425; }
+  .danke-card .dc-cta-blue { background:#0A66C2; }
+  .danke-card .dc-footer { background:#F7F8FA; border-top:1px solid #E8E9EC; padding:16px 52px; text-align:center; font-size:11px; color:#9CA3AF; font-family:'Gill Sans MT', 'Gill Sans', Calibri, Arial, sans-serif; line-height:1.7; }
+  .danke-card .dc-footer a { color:#E87425; text-decoration:none; }
+  @media(max-width:600px){
+    .danke-card .dc-body { padding:32px 24px 24px; }
+    .danke-card .dc-footer { padding:14px 24px; }
+  }
 </style>
 </head>
 <body>
@@ -768,7 +792,7 @@ img{max-width:100%;display:block;height:auto}
       <p>20 Minuten Lesezeit. Kein Beratungsvertrag. Kein Budget. Nur die Bereitschaft, ehrlich hinzuschauen.</p>
       <p><strong>Und danach?</strong> Leiten Sie das Whitepaper an die Person weiter, mit der das Gespräch nötig wird: Ihren Vorgesetzten, Ihre HR-Abteilung, Ihr Team. Die HumanFit Matrix gibt Ihnen die präzise Sprache, um Symptome und Ursachen zu trennen — und den richtigen Hebel zu benennen.</p>
       <ul class="cd" style="margin-top:24px">
-        <li><div class="ico">✉</div><div><a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a></div></li>
+        <li><div class="ico">✉</div><div><a href="/cdn-cgi/l/email-protection#ef86818980af8d828d8b8a9a9b9c8c87838e818bc18b8a"><span class="__cf_email__" data-cfemail="ea83848c85aa8887888e8f9f9e998982868b848ec48e8f">[email&#160;protected]</span></a></div></li>
         <li><div class="ico">🌐</div><div><a href="https://www.bmbdeutschland.de" target="_blank" rel="noopener">www.bmbdeutschland.de</a></div></li>
         <li><div class="ico">📍</div><div>Mittelstraße 23, 40721 Hilden</div></li>
         <li><div class="ico">☎</div><div><a href="tel:+492103333990">+49 (0) 2103 / 33 399 - 0</a></div></li>
@@ -864,9 +888,54 @@ img{max-width:100%;display:block;height:auto}
 
         <button type="submit" class="btn btn-p fsb" id="sB">Whitepaper kostenlos anfordern →</button>
         <div class="fm ok" id="fS"><strong>Vielen Dank!</strong> Ihre Anfrage ist eingegangen. Eine Bestätigungs-E-Mail ist unterwegs.</div>
-        <div class="fm err" id="fE"><strong>Fehler.</strong> Bitte erneut versuchen oder direkt schreiben an <a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a>.</div>
+        <div class="fm err" id="fE"><strong>Fehler.</strong> Bitte erneut versuchen oder direkt schreiben an <a href="/cdn-cgi/l/email-protection#c5acaba3aa85a7a8a7a1a0b0b1b6a6ada9a4aba1eba1a0"><span class="__cf_email__" data-cfemail="d6bfb8b0b996b4bbb4b2b3a3a2a5b5bebab7b8b2f8b2b3">[email&#160;protected]</span></a>.</div>
         <p class="fn">🔒 SSL-verschlüsselt. Keine Datenweitergabe an Dritte. BMB Deutschland GmbH, Hilden. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO.</p>
       </form>
+      <!-- ── DANKE-CARD (wird nach Submit eingeblendet) ── -->
+      <div id="dankebox">
+        <div class="danke-card">
+          <div class="dc-bar"></div>
+          <div class="dc-body">
+            <div class="dc-logo">
+              <img src="data:image/png;base64,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" width="220" alt="BMB Deutschland">
+            </div>
+            <div class="dc-headline">
+              <h2>Ihr Whitepaper ist unterwegs,</h2>
+              <p class="dc-name" id="dankeName"></p>
+              <p class="dc-sub">
+                Bitte prüfen Sie Ihren Posteingang —<br>
+                im Zweifel auch den Spam-Ordner.
+              </p>
+            </div>
+            <hr class="dc-hr">
+            <p class="dc-label">Im Whitepaper</p>
+            <table cellpadding="0" cellspacing="0" width="100%" class="dc-bullet">
+              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">HumanFit Matrix: 5 Realit&auml;ten &times; 8 Bed&uuml;rfnisdimensionen</td></tr>
+              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">Hotspot B2 &times; D2/D3/D6/D8 &mdash; der aggressivste Cluster</td></tr>
+              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">8 Fr&uuml;hwarnsignale &mdash; konkret und sofort beobachtbar</td></tr>
+              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">Maschinenbau-Case: 140 Agents, 6 Wochen, messbare Ergebnisse</td></tr>
+              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">5 Selbstdiagnose-Fragen &mdash; f&uuml;r heute, nach diesem Lesen</td></tr>
+            </table>
+            <hr class="dc-hr">
+            <p class="dc-label">N&auml;chster Schritt</p>
+            <table cellpadding="0" cellspacing="0" width="100%"><tr>
+              <td style="padding-right:10px;width:50%;">
+                <a href="https://meetings-eu1.hubspot.com/marc-bergmann" class="dc-cta dc-cta-orange">Termin vereinbaren &rarr;</a>
+              </td>
+              <td style="width:50%;">
+                <a href="https://www.linkedin.com/in/marc-bergmann-631650143/" class="dc-cta dc-cta-blue">in LinkedIn verbinden</a>
+              </td>
+            </tr></table>
+          </div>
+          <div class="dc-footer">
+            Marc Bergmann &middot; BMB Deutschland GmbH &middot; Mittelstra&szlig;e 23 &middot; 40721 Hilden<br>
+            <a href="mailto:marc.bergmann@bmbdeutschland.de">marc.bergmann@bmbdeutschland.de</a>
+            &nbsp;&middot;&nbsp;
+            <a href="https://www.bmbdeutschland.de/datenschutz">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -889,7 +958,7 @@ img{max-width:100%;display:block;height:auto}
     <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO.<br><br>
     <strong>Speicherdauer:</strong> Bis Widerruf / 24 Monate nach letzter Aktivität.<br><br>
     <strong>Weitergabe:</strong> Keine. Technischer Dienstleister mit AVV (Brevo / Sendinblue SAS).<br><br>
-    <strong>Ihre Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerruf an <a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a>.<br><br>
+    <strong>Ihre Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerruf an <a href="/cdn-cgi/l/email-protection#325b5c545d72505f505657474641515a5e535c561c5657"><span class="__cf_email__" data-cfemail="422b2c242d02202f202627373631212a2e232c266c2627">[email&#160;protected]</span></a>.<br><br>
     <strong>Beschwerderecht:</strong> LDI NRW.
   </p>
 </div>
@@ -901,7 +970,7 @@ img{max-width:100%;display:block;height:auto}
   <div class="ft-i">
     <div class="ft-l">
       <strong>© 2026 BMB Deutschland GmbH</strong><br>
-      Mittelstraße 23 · 40721 Hilden · <a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a>
+      Mittelstraße 23 · 40721 Hilden · <a href="/cdn-cgi/l/email-protection#731a1d151c33111e111716060700101b1f121d175d1716"><span class="__cf_email__" data-cfemail="1b72757d745b7976797f7e6e6f687873777a757f357f7e">[email&#160;protected]</span></a>
     </div>
     <ul class="ft-lk">
       <li><a href="#" onclick="document.getElementById('dm').style.display='flex';return false">Datenschutz</a></li>
@@ -912,7 +981,7 @@ img{max-width:100%;display:block;height:auto}
 </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── NAV TOGGLE ──
 document.getElementById('nT').addEventListener('click', function(){
   document.getElementById('nL').classList.toggle('open');
@@ -988,37 +1057,28 @@ document.getElementById('cF').addEventListener('submit', function(e){
     btn.textContent = 'Whitepaper anfordern →';
     var msg = document.getElementById('fM');
     if(d.success){
-      msg.className = 'fm ok';
-      msg.textContent = '✓ Vielen Dank! Ihr Whitepaper wird per E-Mail zugestellt.';
-      f.reset();
+      // Formular ausblenden, Danke-Card einblenden
+      f.style.display = 'none';
+      var dankeBox = document.getElementById('dankebox');
+      dankeBox.style.display = 'block';
+      // Name dynamisch aus Payload setzen
+      document.getElementById('dankeName').textContent = payload.vorname + ' ' + payload.nachname;
+      // Smooth scroll zur Danke-Card
+      dankeBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-      msg.className = 'fm err';
-      msg.textContent = '⚠ Fehler beim Senden. Bitte versuchen Sie es erneut.';
+      var errMsg = document.getElementById('fE');
+      errMsg.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Whitepaper anfordern →';
     }
-    msg.style.display = 'block';
   })
   .catch(function(){
     btn.disabled = false;
     btn.textContent = 'Whitepaper anfordern →';
-    var msg = document.getElementById('fM');
-    msg.className = 'fm err';
-        msg.textContent = '⚠ Verbindungsfehler. Bitte schreiben Sie direkt an info@bmbdeutschland.de';
-    msg.style.display = 'block';
+    var errMsg = document.getElementById('fE');
+    errMsg.style.display = 'block';
   });
 });
-
-// Matrix modal
-document.querySelectorAll('.hc').forEach(function(el){
-  el.style.cursor = 'pointer';
-});
-
-// Datenschutz modal close on backdrop click
-var dm = document.getElementById('dm');
-if(dm){
-  dm.addEventListener('click', function(e){
-    if(e.target === dm) dm.style.display = 'none';
-  });
-}
 </script>
 </body>
 </html>
