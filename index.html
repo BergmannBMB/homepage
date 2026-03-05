@@ -74,8 +74,7 @@ img{max-width:100%;display:block;height:auto}
 .hero{padding:104px 0 72px;background:linear-gradient(170deg,var(--bg) 55%,var(--bg-c) 100%);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-80px;right:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(232,116,37,.06),transparent 70%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-60px;left:-100px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(26,59,85,.04),transparent 70%);pointer-events:none}
-.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,116,37,.08);border:1px solid rgba(232,116,37,.18);padding:6px 16px;border-radius:100px;font-size:.75rem;font-weight:600;color:var(--orange);margin-bottom:22px;letter-spacing:.03em}
-.hbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 2s ease-in-out infinite}
+
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
 /* ── HERO: THREE STATEMENTS ── */
@@ -98,7 +97,10 @@ img{max-width:100%;display:block;height:auto}
 .hs-lbl{font-size:.72rem;color:var(--text-m);line-height:1.3;max-width:130px}
 .hs-ref{font-size:.63rem;color:var(--text-m);margin-top:14px;max-width:660px;line-height:1.5}
 
-.pt{background:var(--navy-d);padding:22px 0;overflow:hidden}
+.alert-bar{background:#cc0000;padding:10px 0;text-align:center;font-size:.82rem;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px}
+.alert-dot{width:12px;height:12px;background:#fff;border-radius:50%;flex-shrink:0;animation:blink-warn .7s step-start infinite}
+@keyframes blink-warn{0%,100%{opacity:1}50%{opacity:0}}
+.pt{background:var(--navy-d);padding:14px 0;overflow:hidden}
 .tw{overflow:hidden}
 .ti{display:flex;gap:48px;align-items:center;animation:ticker 40s linear infinite;width:max-content}
 .ti-i{display:flex;align-items:center;gap:10px;white-space:nowrap;color:rgba(255,255,255,.65);font-size:.82rem;font-weight:500}
@@ -278,7 +280,8 @@ img{max-width:100%;display:block;height:auto}
   .gs::before{display:none}
   .cg{grid-template-columns:1fr}
   .ag{grid-template-columns:1fr}
-  .ac{max-width:280px}
+  .ac{max-width:320px;margin:0 auto;text-align:center}
+  .a-img{margin:0 auto 14px}
   .three-col{grid-template-columns:1fr}
 }
 @media(max-width:680px){
@@ -296,7 +299,13 @@ img{max-width:100%;display:block;height:auto}
   .gs{grid-template-columns:1fr}
   .hs-bar{gap:16px}
   .hs-num{font-size:1.5rem}
-  .fm-tbl{display:block;overflow-x:auto;white-space:nowrap}
+  .fm-tbl thead{display:none}
+  .fm-tbl,.fm-tbl tbody,.fm-tbl tr,.fm-tbl td{display:block;white-space:normal}
+  .fm-tbl tr{background:var(--bg);border:1px solid var(--border-l);border-radius:var(--rs);padding:14px;margin-bottom:10px}
+  .fm-tbl td{padding:4px 0;border:none;font-size:.82rem}
+  .fm-tbl td:first-child{font-size:.92rem;font-weight:700;color:var(--navy);border-bottom:1px solid var(--border-l);padding-bottom:8px;margin-bottom:4px}
+  .fm-tbl td:nth-child(2)::before{content:"Adressiert: ";font-weight:600;color:var(--text-s)}
+  .fm-tbl td:nth-child(3)::before{content:"Tatsächlicher Bedarf: ";font-weight:600;color:var(--orange)}
   .ft-i{flex-direction:column;align-items:flex-start}
   .ft-lk{flex-wrap:wrap;gap:14px}
 }
@@ -332,8 +341,12 @@ img{max-width:100%;display:block;height:auto}
 
 <!-- HERO -->
 <section class="hero" id="top">
+<div style="width:100%;background:#cc0000;padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:14px;box-sizing:border-box;margin-bottom:40px;">
+  <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#ffffff;flex-shrink:0;animation:blink-warn .7s step-start infinite;"></span>
+  <span style="font-size:.82rem;font-weight:700;color:#ffffff;font-family:inherit;text-align:center;">Fraunhofer-Institut 01/2026: 67&#160;% der Unternehmen wollen innovieren &#8212; scheitern an Umsetzung und Entscheidungsstau</span>
+  <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#ffffff;flex-shrink:0;animation:blink-warn .7s step-start infinite;"></span>
+</div>
 <div class="ct">
-  <div class="hbadge fi">Krisen, KI-Disruption und Organisationsstress — März 2026</div>
 
   <!-- Three statements, each on one line -->
   <div class="hero-statements fi">
@@ -342,11 +355,11 @@ img{max-width:100%;display:block;height:auto}
     <div class="hs-line">Und Ihnen selbst <em>auch.</em></div>
   </div>
 
-  <h1 class="fi">Das eigentliche Problem liegt <em>tiefer —</em><br>und es ist das, worüber niemand spricht.</h1>
+  <h1 class="fi">Das eigentliche <em>Problem Ihres Unternehmens liegt viel tiefer</em> —<br>und es ist das, worüber niemand spricht und keiner mehr denkt.</h1>
 
-  <p class="hp fi">Energiepreisexplosion. Zölle. Lieferkettenprobleme. Stellenabbau. Geopolitische Unsicherheit. KI-Disruption. Der Druck ist real. Er ist überall. Und er wächst.</p>
-  <p class="hp fi">Ihre Mitarbeiter erledigen ihre Aufgaben — aber sie denken immer seltener mit. Ihre Führungskräfte treffen Entscheidungen — aber die innere Überzeugung bröckelt. Ihre Organisation wirkt nicht ineffizient. <strong>Sie wirkt gelähmt.</strong></p>
-  <p class="hp fi">Also greifen Sie zu dem, was Organisationen immer tun: Prozesse. Technologie. Programme. Schulungen. Chatbots. Reorganisation. <strong>Und es hilft nicht. Weil es am falschen Ort ansetzt.</strong></p>
+  <p class="hp fi">Energiepreisexplosion. Bürokratiestau. Zölle. Lieferkettenprobleme. Stellenabbau. Hohe Krankheitsstände. Geopolitische Unsicherheit. KI-Disruption. Der Druck ist real. Er ist überall. Und er wächst.</p>
+  <p class="hp fi">Ihre Mitarbeiter erledigen ihre Aufgaben — aber sie denken immer seltener verantwortungsvoll mit. Ihre Führungskräfte treffen Entscheidungen — aber die innere Überzeugung bröckelt und es fehlt an strategischer Perspektive. Ihre Organisation wirkt nicht ineffizient, sondern reaktiv. <strong>Ihr Unternehmen wirkt gelähmt.</strong></p>
+  <p class="hp fi">Also greifen Sie zu dem, was Firmen immer tun: Prozesse. Technologie. Programme. Schulungen. Einsparungen. Reorganisation. <strong>Und es hilft leider nicht. Weil es wahrscheinlich am falschen Ort ansetzt.</strong></p>
 
   <div class="hq fi">„Wir kommen zu nichts." — Das ist selten ein Effizienzproblem. Meist ist es ein Bedürfnisproblem — in der Organisation, bei den Kunden, beim Einzelnen.</div>
 
@@ -370,7 +383,7 @@ img{max-width:100%;display:block;height:auto}
     </div>
     <div class="hs-item">
       <div class="hs-num">0</div>
-      <div class="hs-lbl">systematische Nutzung von Servicekontakten für Cross-Selling</div>
+      <div class="hs-lbl">systematische Nutzung von Servicekontakten für Up- &amp; Cross-Selling</div>
     </div>
   </div>
   <p class="hs-ref fi">¹ BDI, Industriereport 2024/25 &nbsp;·&nbsp; ² McKinsey, The State of Customer Care, 2023 &nbsp;·&nbsp; ³ Gartner, Why Chatbots Fail, 2022</p>
@@ -380,23 +393,21 @@ img{max-width:100%;display:block;height:auto}
 <!-- TICKER -->
 <div class="pt" aria-hidden="true">
 <div class="tw"><div class="ti" id="tk">
-  <div class="ti-i"><span class="n">D6</span> Entlastung — „Ich funktioniere nur noch."</div>
-  <div class="ti-i"><span class="n">B2×D2</span> Kontrollverlust trifft Orientierung</div>
-  <div class="ti-i"><span class="n">D8</span> Rollenklarheit — „Was ist mein Job?"</div>
-  <div class="ti-i"><span class="n">B3×D4</span> Eindeutigkeitssehnsucht trifft Zugehörigkeit</div>
-  <div class="ti-i"><span class="n">D3</span> Selbstwirksamkeit — „Bringt eh nichts."</div>
-  <div class="ti-i"><span class="n">HumanFit Matrix</span> 5 × 8 Schnittpunkte</div>
-  <div class="ti-i"><span class="n">D5</span> Sinn — „Wofür mache ich das?"</div>
-  <div class="ti-i"><span class="n">B4×D2</span> Vertrauensstress trifft Orientierung</div>
+  <div class="ti-i"><span class="n">Maschinenbau</span> 10.000 Jobs pro Monat gestrichen (IAB, Feb. 2026)</div>
+  <div class="ti-i"><span class="n">US-Zölle</span> 15% auf EU-Exporte — Maschinenbau weiter ungeschützt (VDMA, März 2026)</div>
+  <div class="ti-i"><span class="n">Deloitte/BDI</span> 68% der Unternehmen erwägen Produktionsverlagerung ins Ausland</div>
+  <div class="ti-i"><span class="n">IW-Umfrage</span> Jedes 3. Unternehmen plant Stellenabbau in 2026</div>
+  <div class="ti-i"><span class="n">Destatis</span> Arbeitslosigkeit steigt von 3,7% auf 4,2% — Abwärtstrend seit Aug. 2025</div>
+  <div class="ti-i"><span class="n">DGFP 2026</span> Lange, unklare Prozesse kosten Vertrauen — und Akzeptanz</div>
+  <div class="ti-i"><span class="n">Führungsstudie</span> Entscheidungsparalyse — nicht aus Schwäche, sondern aus Verantwortungsbewusstsein</div>
   <!-- duplicate for seamless loop -->
-  <div class="ti-i"><span class="n">D6</span> Entlastung — „Ich funktioniere nur noch."</div>
-  <div class="ti-i"><span class="n">B2×D2</span> Kontrollverlust trifft Orientierung</div>
-  <div class="ti-i"><span class="n">D8</span> Rollenklarheit — „Was ist mein Job?"</div>
-  <div class="ti-i"><span class="n">B3×D4</span> Eindeutigkeitssehnsucht trifft Zugehörigkeit</div>
-  <div class="ti-i"><span class="n">D3</span> Selbstwirksamkeit — „Bringt eh nichts."</div>
-  <div class="ti-i"><span class="n">HumanFit Matrix</span> 5 × 8 Schnittpunkte</div>
-  <div class="ti-i"><span class="n">D5</span> Sinn — „Wofür mache ich das?"</div>
-  <div class="ti-i"><span class="n">B4×D2</span> Vertrauensstress trifft Orientierung</div>
+  <div class="ti-i"><span class="n">Maschinenbau</span> 10.000 Jobs pro Monat gestrichen (IAB, Feb. 2026)</div>
+  <div class="ti-i"><span class="n">US-Zölle</span> 15% auf EU-Exporte — Maschinenbau weiter ungeschützt (VDMA, März 2026)</div>
+  <div class="ti-i"><span class="n">Deloitte/BDI</span> 68% der Unternehmen erwägen Produktionsverlagerung ins Ausland</div>
+  <div class="ti-i"><span class="n">IW-Umfrage</span> Jedes 3. Unternehmen plant Stellenabbau in 2026</div>
+  <div class="ti-i"><span class="n">Destatis</span> Arbeitslosigkeit steigt von 3,7% auf 4,2% — Abwärtstrend seit Aug. 2025</div>
+  <div class="ti-i"><span class="n">DGFP 2026</span> Lange, unklare Prozesse kosten Vertrauen — und Akzeptanz</div>
+  <div class="ti-i"><span class="n">Führungsstudie</span> Entscheidungsparalyse — nicht aus Schwäche, sondern aus Verantwortungsbewusstsein</div>
 </div></div>
 </div>
 
@@ -426,7 +437,7 @@ img{max-width:100%;display:block;height:auto}
       </div>
     </div>
     <p>Organisationen reagieren auf Marktstress mit Prozessen, Technologie und Programmen. Richtig so — nur lösen sie damit selten das eigentliche Problem. Die Blockade entsteht meistens eine Ebene tiefer: dort, wo menschliche Bedürfnisse auf Marktdruck treffen. Dieser Schnittpunkt bleibt in den meisten Organisationen systematisch unsichtbar.</p>
-    <p><strong>Der HumanFit Check macht ihn sichtbar.</strong> Grundlage ist die HumanFit Matrix: <strong>5 Marktdynamiken × 8 menschliche Bedürfnisdimensionen</strong> — entwickelt auf Basis von 25+ Jahren Praxis in Kundenservice, Organisationsentwicklung und Customer Experience.</p>
+    <p><strong>Der HumanFit Check macht ihn sichtbar.</strong> Grundlage ist die HumanFit Matrix: <strong>5 Marktdynamiken × 8 menschliche Bedürfnisdimensionen</strong> — entwickelt auf Basis von jahrzehntelanger Praxis in Kundenservice, Organisationsentwicklung und Customer Experience.</p>
   </div>
 </div>
 </section>
@@ -454,7 +465,7 @@ img{max-width:100%;display:block;height:auto}
     </div>
     <div class="dc">
       <h3>Bei Ihren Kunden</h3>
-      <p>Viele Kunden kündigen nicht laut. Kein Knall, keine Beschwerde — sie verlängern einfach nicht. Andere bleiben — nicht aus Bindung, sondern weil sie noch keine Alternative sehen. Zombie-Kunden: Sie zahlen, aber sie wachsen nicht mit Ihnen. Und wenn die Alternative kommt, brechen viele gleichzeitig weg. Ein stummer Bot merkt das nicht. Ein Mensch hätte es gemerkt.</p>
+      <p>Viele Kunden kündigen nicht laut. Kein Knall, keine Beschwerde — sie verlängern einfach nicht mehr. Andere bleiben — aber nicht aus Bindung, sondern weil sie noch keine Alternative sehen. Zombie-Kunden: Sie zahlen, aber sie wachsen nicht mit Ihnen. Und wenn die Alternative kommt, brechen viele gleichzeitig weg. Ein stummer Bot merkt das nicht, weil er auf schnelle Service-Lösungen drängt. Ein empathischer Mensch im Kundenservice hätte es gemerkt.</p>
     </div>
   </div>
   <div class="bq-box fi">
@@ -702,21 +713,21 @@ img{max-width:100%;display:block;height:auto}
       </div>
       <h3>Marc Bergmann</h3>
       <div class="role">Managing Director, BMB Deutschland GmbH</div>
-      <div class="bio">CX-Experte seit 1998. Erfinder der Servicequalitätszertifizierung in Deutschland. Langjährige Lehrtätigkeit an der Heinrich-Heine-Universität Düsseldorf.</div>
+      <div class="bio">CX-Experte seit 1998. Erfinder der Servicequalitätszertifizierung in Deutschland. BaFa-Berater.</div>
     </div>
     <ul class="cl">
       <li>
         <div class="ci">🎓</div>
         <div class="ctt">
           <h4>Wissenschaftliche Fundierung</h4>
-          <p>Langjährige Lehrtätigkeit an der Heinrich-Heine-Universität Düsseldorf. 30+ Quellen im Framework.</p>
+          <p>30 Jahre Lehrtätigkeit an der Heinrich-Heine-Universität Düsseldorf. 20 Jahre Marketing &amp; Vertriebsdozent an der IHK Düsseldorf, Mittlerer Niederrhein, Duisburg. Zahlreiche Publikationen &amp; Experte für Servicethemen in TV &amp; Radio.</p>
         </div>
       </li>
       <li>
         <div class="ci">📊</div>
         <div class="ctt">
           <h4>Datengetriebene Praxis</h4>
-          <p>CX-Programme, Serviceanalysen und Organisationsdiagnosen seit über 25 Jahren. Big Data Engineer, SCRUM Master, Digital Change Manager, Technischer KI Manager, Business Data Professional.</p>
+          <p>CX-Programme, Serviceanalysen und Organisationsdiagnosen. Qualitätssicherung &amp; -entwicklung im Service. CX-KPI-Entwicklung im Omnichannel. IHK-Zertifizierungen: Big Data Engineer, Data Analyst, Business Data Professional, Digital Change Manager, SCRUM Master &amp; Product-Owner, Technischer KI Manager, Wissensmanager.</p>
         </div>
       </li>
       <li>
@@ -730,14 +741,14 @@ img{max-width:100%;display:block;height:auto}
         <div class="ci">🤖</div>
         <div class="ctt">
           <h4>KI-Transformation</h4>
-          <p>RAG-Chatbots, KI-Dialogsysteme, Voicebots und automatisierte Feedbacksysteme. ICEI-Methodik.</p>
+          <p>RAG-Chatbots, KI-Dialogsysteme, Voicebots und automatisierte Feedbacksysteme. ICEI-Methodik. Agent Development.</p>
         </div>
       </li>
       <li>
         <div class="ci">📍</div>
         <div class="ctt">
           <h4>BMB Deutschland GmbH</h4>
-          <p>Mittelstraße 23, 40721 Hilden · CX Management</p>
+          <p>Mittelstraße 23, 40721 Hilden</p>
         </div>
       </li>
     </ul>
@@ -763,7 +774,7 @@ img{max-width:100%;display:block;height:auto}
       <p>20 Minuten Lesezeit. Kein Beratungsvertrag. Kein Budget. Nur die Bereitschaft, ehrlich hinzuschauen.</p>
       <p><strong>Und danach?</strong> Leiten Sie das Whitepaper an die Person weiter, mit der das Gespräch nötig wird: Ihren Vorgesetzten. Ihre HR-Abteilung. Ihr Team. Das Whitepaper gibt Ihnen die Sprache, die Sie dafür brauchen.</p>
       <ul class="cd" style="margin-top:24px">
-        <li><div class="ico">✉</div><div><a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a></div></li>
+        <li><div class="ico">✉</div><div><a href="/cdn-cgi/l/email-protection#acc5c2cac3eccec1cec8c9d9d8dfcfc4c0cdc2c882c8c9"><span class="__cf_email__" data-cfemail="86efe8e0e9c6e4ebe4e2e3f3f2f5e5eeeae7e8e2a8e2e3">[email&#160;protected]</span></a></div></li>
         <li><div class="ico">🌐</div><div><a href="https://www.bmbdeutschland.de" target="_blank" rel="noopener">www.bmbdeutschland.de</a></div></li>
         <li><div class="ico">📍</div><div>Mittelstraße 23, 40721 Hilden</div></li>
         <li><div class="ico">☎</div><div><a href="tel:+492103333990">+49 (0) 2103 / 33 399 - 0</a></div></li>
@@ -859,7 +870,7 @@ img{max-width:100%;display:block;height:auto}
 
         <button type="submit" class="btn btn-p fsb" id="sB">Whitepaper kostenlos anfordern →</button>
         <div class="fm ok" id="fS"><strong>Vielen Dank!</strong> Ihre Anfrage ist eingegangen. Eine Bestätigungs-E-Mail ist unterwegs.</div>
-        <div class="fm err" id="fE"><strong>Fehler.</strong> Bitte erneut versuchen oder direkt schreiben an <a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a>.</div>
+        <div class="fm err" id="fE"><strong>Fehler.</strong> Bitte erneut versuchen oder direkt schreiben an <a href="/cdn-cgi/l/email-protection#0f666169604f6d626d6b6a7a7b7c6c67636e616b216b6a"><span class="__cf_email__" data-cfemail="f59c9b939ab59798979190808186969d99949b91db9190">[email&#160;protected]</span></a>.</div>
         <p class="fn">🔒 SSL-verschlüsselt. Keine Datenweitergabe an Dritte. BMB Deutschland GmbH, Hilden. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO.</p>
       </form>
     </div>
@@ -884,7 +895,7 @@ img{max-width:100%;display:block;height:auto}
     <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO.<br><br>
     <strong>Speicherdauer:</strong> Bis Widerruf / 24 Monate nach letzter Aktivität.<br><br>
     <strong>Weitergabe:</strong> Keine. Technischer Dienstleister mit AVV (Brevo / Sendinblue SAS).<br><br>
-    <strong>Ihre Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerruf an <a href="mailto:info@bmbdeutschland.de" style="color:var(--orange)">info@bmbdeutschland.de</a>.<br><br>
+    <strong>Ihre Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerruf an <a href="/cdn-cgi/l/email-protection#a5cccbc3cae5c7c8c7c1c0d0d1d6c6cdc9c4cbc18bc1c0" style="color:var(--orange)"><span class="__cf_email__" data-cfemail="3950575f56795b545b5d5c4c4d4a5a515558575d175d5c">[email&#160;protected]</span></a>.<br><br>
     <strong>Beschwerderecht:</strong> LDI NRW.
   </p>
 </div>
@@ -896,7 +907,7 @@ img{max-width:100%;display:block;height:auto}
   <div class="ft-i">
     <div class="ft-l">
       <strong>© 2026 BMB Deutschland GmbH</strong><br>
-      Mittelstraße 23 · 40721 Hilden · <a href="mailto:info@bmbdeutschland.de" style="color:var(--text-m)">info@bmbdeutschland.de</a>
+      Mittelstraße 23 · 40721 Hilden · <a href="/cdn-cgi/l/email-protection#640d0a020b240609060001111017070c08050a004a0001" style="color:var(--text-m)"><span class="__cf_email__" data-cfemail="8ee7e0e8e1ceece3eceaebfbfafdede6e2efe0eaa0eaeb">[email&#160;protected]</span></a>
     </div>
     <ul class="ft-lk">
       <li><a href="#" onclick="document.getElementById('dm').style.display='flex';return false">Datenschutz</a></li>
@@ -907,7 +918,7 @@ img{max-width:100%;display:block;height:auto}
 </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── NAV TOGGLE ──
 document.getElementById('nT').addEventListener('click', function(){
   document.getElementById('nL').classList.toggle('open');
@@ -976,29 +987,45 @@ document.getElementById('cF').addEventListener('submit', function(e){
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
   })
-  .then(function(r){
-    if(!r.ok) throw new Error('Server error ' + r.status);
-    return r.json();
-  })
-  .then(function(data){
-    if(data.success){
-      document.getElementById('fS').style.display = 'block';
-      document.getElementById('fE').style.display = 'none';
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    btn.disabled = false;
+    btn.textContent = 'Whitepaper anfordern →';
+    var msg = document.getElementById('fM');
+    if(d.success){
+      msg.className = 'fm ok';
+      msg.textContent = '✓ Vielen Dank! Ihr Whitepaper wird per E-Mail zugestellt.';
       f.reset();
     } else {
-      throw new Error(data.error || 'Unknown error');
+      msg.className = 'fm err';
+      msg.textContent = '⚠ Fehler beim Senden. Bitte versuchen Sie es erneut.';
     }
+    msg.style.display = 'block';
   })
-  .catch(function(err){
-    document.getElementById('fE').style.display = 'block';
-    document.getElementById('fS').style.display = 'none';
-    console.error('Form error:', err);
-  })
-  .finally(function(){
+  .catch(function(){
     btn.disabled = false;
-    btn.textContent = 'Whitepaper kostenlos anfordern →';
+    btn.textContent = 'Whitepaper anfordern →';
+    var msg = document.getElementById('fM');
+    msg.className = 'fm err';
+    msg.textContent = '⚠ Verbindungsfehler. Bitte versuchen Sie es erneut.';
+    msg.style.display = 'block';
   });
 });
+
+// ── MATRIX MODAL ──
+var miw = document.querySelector('.miw');
+var md = document.getElementById('mM');
+if(miw && md){
+  miw.addEventListener('click', function(){ md.style.display = 'flex'; });
+  md.addEventListener('click', function(e){ if(e.target === md) md.style.display = 'none'; });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') md.style.display = 'none'; });
+}
+
+// ── DATENSCHUTZ MODAL ──
+var dm = document.getElementById('dm');
+if(dm){
+  dm.addEventListener('click', function(e){ if(e.target === dm) dm.style.display = 'none'; });
+}
 </script>
 </body>
 </html>
