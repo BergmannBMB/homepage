@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HumanFit Check — Organisationsdiagnose wenn Maßnahmen nicht wirken | BMB Deutschland</title>
-<meta name="description" content="Warum Resilienz-Trainings, Purpose-Workshops und Chatbots nicht wirken: Die HumanFit Matrix zeigt, wo Organisationen wirklich blockieren. Kostenloses Whitepaper mit Selbstdiagnose.">
+<meta name="description" content="Wenn Organisationen die falschen Fragen stellen: Die HumanFit Matrix zeigt, wo Marktdruck auf menschliche Bedürfnisse trifft — und warum Maßnahmen trotzdem nicht greifen. Kostenloses Whitepaper für Entscheider in der Dauerkrise.">
 <meta name="keywords" content="Organisationsentwicklung Diagnose, Mitarbeiterbedürfnisse erkennen, CX Maßnahmen wirken nicht, Kundenservice Überlastung, Chatbot ROI, HumanFit Matrix, BMB Deutschland">
 <meta name="author" content="Marc Bergmann, BMB Deutschland GmbH">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://humanfit-check.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="HumanFit Check — Organisationsdiagnose wenn Maßnahmen nicht wirken">
-<meta property="og:description" content="5 Marktdynamiken × 8 Bedürfnisdimensionen: Die HumanFit Matrix zeigt, warum Ihre Maßnahmen nicht greifen — und wo der Hebel liegt.">
+<meta property="og:description" content="Marktlogik × Menschenlogik: 5 Organisations-Realitäten × 8 Bedürfnisdimensionen — das Zwei-Ebenen-Modell für Entscheider in der Dauerkrise.">
 <meta property="og:url" content="https://humanfit-check.com/">
 <meta property="og:site_name" content="HumanFit Check">
 <meta property="og:locale" content="de_DE">
 <meta property="og:image" content="https://humanfit-check.com/matrix-chart.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="HumanFit Check — Organisationsdiagnose wenn Maßnahmen nicht wirken">
-<meta name="twitter:description" content="Warum Resilienz-Trainings, Purpose-Workshops und Chatbots nicht wirken. Kostenloses Whitepaper.">
+<meta name="twitter:description" content="Wenn Organisationen die falschen Fragen stellen — kostenloses Whitepaper mit HumanFit Matrix, Hotspot-Analyse und Maschinenbau-Case.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"BMB Deutschland GmbH","url":"https://www.bmbdeutschland.de","contactPoint":{"@type":"ContactPoint","telephone":"+49-2103-33399-0","contactType":"customer service","availableLanguage":"German"},"address":{"@type":"PostalAddress","streetAddress":"Mittelstraße 23","addressLocality":"Hilden","postalCode":"40721","addressCountry":"DE"},"founder":{"@type":"Person","name":"Marc Bergmann","jobTitle":"Managing Director"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,9 +78,7 @@ img{max-width:100%;display:block;height:auto}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
 /* ── HERO: THREE STATEMENTS ── */
-.hero-statements{display:flex;flex-direction:column;gap:2px;margin-bottom:20px}
-.hero-statements .hs-line{font-size:clamp(1rem,2.5vw,1.3rem);font-family:var(--serif);font-weight:700;color:var(--navy-d);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.hero-statements .hs-line em{font-style:normal;color:var(--orange)}
+
 
 .hero h1{font-size:clamp(1.6rem,3.5vw,2.6rem);line-height:1.2;letter-spacing:-.02em;color:var(--navy-d);margin-bottom:20px;max-width:760px;font-family:var(--serif)}
 .hero h1 em{font-style:normal;color:var(--orange)}
@@ -268,8 +266,9 @@ img{max-width:100%;display:block;height:auto}
 .ft-lk a:hover{color:var(--orange)}
 
 /* ── ANIMATION ── */
-.fi{opacity:0;transform:translateY(20px);transition:opacity .55s ease-out,transform .55s ease-out}
-.fi.v{opacity:1;transform:translateY(0)}
+.fi{opacity:1;transform:translateY(0)}
+.js-ready .fi{opacity:0;transform:translateY(20px);transition:opacity .55s ease-out,transform .55s ease-out}
+.js-ready .fi.v{opacity:1;transform:translateY(0)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
@@ -290,7 +289,7 @@ img{max-width:100%;display:block;height:auto}
   .nt{display:flex}
   .hero{padding:88px 0 52px}
   .sec{padding:56px 0}
-  .hero-statements .hs-line{font-size:clamp(.88rem,3.5vw,1.05rem);white-space:normal}
+
   .hero h1{font-size:clamp(1.4rem,5vw,2rem)}
   .hp{font-size:.9rem}
   .fr{grid-template-columns:1fr}
@@ -347,13 +346,6 @@ img{max-width:100%;display:block;height:auto}
   <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#ffffff;flex-shrink:0;animation:blink-warn .7s step-start infinite;"></span>
 </div>
 <div class="ct">
-
-  <!-- Three statements, each on one line -->
-  <div class="hero-statements fi">
-    <div class="hs-line">Ihren Mitarbeitern geht es <em>so.</em></div>
-    <div class="hs-line">Ihren Kunden geht es <em>so.</em></div>
-    <div class="hs-line">Und Ihnen selbst <em>auch.</em></div>
-  </div>
 
   <h1 class="fi">Das eigentliche <em>Problem Ihres Unternehmens liegt viel tiefer</em> —<br>und es ist das, worüber niemand spricht und keiner mehr denkt.</h1>
 
@@ -437,7 +429,7 @@ img{max-width:100%;display:block;height:auto}
       </div>
     </div>
     <p>Organisationen reagieren auf Marktstress mit Prozessen, Technologie und Programmen. Richtig so — nur lösen sie damit selten das eigentliche Problem. Die Blockade entsteht meistens eine Ebene tiefer: dort, wo menschliche Bedürfnisse auf Marktdruck treffen. Dieser Schnittpunkt bleibt in den meisten Organisationen systematisch unsichtbar.</p>
-    <p><strong>Der HumanFit Check macht ihn sichtbar.</strong> Grundlage ist die HumanFit Matrix: <strong>5 Marktdynamiken × 8 menschliche Bedürfnisdimensionen</strong> — entwickelt auf Basis von jahrzehntelanger Praxis in Kundenservice, Organisationsentwicklung und Customer Experience.</p>
+    <p><strong>Der HumanFit Check macht ihn sichtbar.</strong> Grundlage ist die <strong>HumanFit Matrix</strong> — ein empirisch fundiertes Zwei-Ebenen-Modell mit <strong>5 Organisations-Realitäten (B1–B5) × 8 Bedürfnisdimensionen (D1–D8)</strong>, entwickelt auf Basis von jahrzehntelanger Praxis in Kundenservice, Organisationsentwicklung und Customer Experience.</p>
   </div>
 </div>
 </section>
@@ -524,7 +516,7 @@ img{max-width:100%;display:block;height:auto}
     </div>
   </div>
   <div class="bq-box fi" style="margin-top:28px">
-    <p>Das sind selten Einzelfälle. Sie folgen strukturellen Mustern. Und diese Muster haben eine Logik — <strong>die HumanFit Matrix macht sie sichtbar.</strong></p>
+    <p>Das sind selten Einzelfälle. Sie folgen strukturellen Mustern. Und diese Muster haben eine Logik — <strong>die HumanFit Matrix macht sie sichtbar und zeigt, wo der strategische Hebel liegt.</strong></p>
   </div>
 </div>
 </section>
@@ -591,12 +583,12 @@ img{max-width:100%;display:block;height:auto}
   <div class="fi">
     <span class="sl">Das Framework</span>
     <h2 class="st">Eine Landkarte für Organisationsstress.</h2>
-    <p class="sd"><strong>Was der Markt macht × Was Menschen brauchen.</strong> Die HumanFit Matrix verbindet beides — und zeigt, wo Blockaden entstehen und wo Hebel wirken.</p>
+    <p class="sd"><strong>Marktlogik × Menschenlogik.</strong> Die HumanFit Matrix kreuzt 5 wiederkehrende Organisations-Realitäten (B1–B5) mit 8 empirisch validierten Bedürfnisdimensionen (D1–D8) — und zeigt, an welchem Schnittpunkt Interventionen wirklich greifen.</p>
   </div>
   <div class="miw fi" onclick="this.querySelector('img').style.transform=this.querySelector('img').style.transform?'':'scale(1.5)'">
-    <img src="matrix-chart.png" alt="HumanFit Matrix: 5 Marktdynamiken × 8 Bedürfnisdimensionen" loading="lazy">
+    <img src="matrix-chart.png" alt="HumanFit Matrix: 5 Organisations-Realitäten × 8 Bedürfnisdimensionen" loading="lazy">
   </div>
-  <p class="mc fi">HumanFit Matrix V2, März 2026 · BMB Deutschland GmbH · 5 Marktdynamiken × 8 Bedürfnisdimensionen · Leserichtung: Welche Marktbox trifft Ihre Organisation?</p>
+  <p class="mc fi">HumanFit Matrix · März 2026 · BMB Deutschland GmbH · 5 Boxen (B1–B5) × 8 Dimensionen (D1–D8) · Leserichtung: Welche Box trifft Ihre Organisation?</p>
 
   <div class="hg fi" style="margin-top:36px">
     <div class="hc red">
@@ -648,7 +640,7 @@ img{max-width:100%;display:block;height:auto}
     <div class="wk-c" data-num="C">
       <div class="wk-n">Ebene 3 — Handlungsklarheit</div>
       <h3>„Jetzt weiß ich, wo ich anfangen muss."</h3>
-      <p>Nicht alles ändern. Sondern: hier anfangen, so. Die Matrix zeigt die Hotspots — die 2–3 Schnittpunkte, an denen der größte Teil der Wirkung entsteht.</p>
+      <p>Nicht alles ändern. Sondern: hier anfangen, so. Die Matrix zeigt die Hotspots — jene 2–3 Schnittpunkte (z. B. B2 × D2/D3/D6/D8), an denen der größte Teil der Wirkung entsteht.</p>
     </div>
   </div>
 </div>
@@ -668,7 +660,7 @@ img{max-width:100%;display:block;height:auto}
     <div class="gsi">
       <div class="gsn">1</div>
       <h4>Whitepaper</h4>
-      <p>Verstehen &amp; Selbstdiagnose. 20 Min. Lesezeit. Kein Budget. Kein Beratungsvertrag.</p>
+      <p>HumanFit Matrix + 8 Frühwarnsignale + Maschinenbau-Case + 5 Selbstdiagnose-Fragen. 20 Min. Lesezeit. Kein Budget. Kein Beratungsvertrag.</p>
       <span class="badge ok">✓ Verfügbar</span>
     </div>
     <div class="gsi">
@@ -757,16 +749,24 @@ img{max-width:100%;display:block;height:auto}
 <div class="ct">
   <div class="fi">
     <span class="sl">Whitepaper anfordern</span>
-    <h2 class="st">Vom Stillstand ins Handeln — in 20 Minuten.</h2>
-    <p class="sd">Kostenloses Whitepaper mit HumanFit Matrix, Selbstdiagnose und Handlungsimpulsen. Für alle, die CX wieder vom Menschen her denken wollen.</p>
+    <h2 class="st">„Wenn Organisationen die falschen Fragen stellen" — kostenloses Whitepaper.</h2>
+    <p class="sd">Ein Zwei-Ebenen-Modell für Entscheider in der Dauerkrise: HumanFit Matrix, Hotspot-Analyse, vollständiger Maschinenbau-Case und konkrete nächste Schritte. 20 Min. Lesezeit.</p>
   </div>
 
   <div class="cg">
     <div class="cif fi">
       <h3>Was Sie erhalten</h3>
-      <p>Das Whitepaper enthält die vollständige 5×8 HumanFit Matrix mit Erklärung aller Schnittpunkte, einen Selbst-Check (8 Aussagen für Sie persönlich, 8 für Ihre Organisation, 4 für Ihre Kundenseite), die häufigsten Fehlmaßnahmen, konkrete Micro-Interventionen und die Hotspot-Logik.</p>
+      <p>Das Whitepaper enthält das vollständige Zwei-Ebenen-Modell: <strong>5 Organisations-Realitäten (B1–B5)</strong> × <strong>8 Bedürfnisdimensionen (D1–D8)</strong> mit Leitfragen und empirischen Korrelationen, die Hotspot-Analyse (B2 × D2/D3/D6/D8 und B3), <strong>8 Frühwarnsignale</strong> für die Praxis, einen <strong>vollständigen Maschinenbau-Case</strong> (140 Agents, 6-Wochen-Pilot, messbare Ergebnisse) sowie das <strong>Guided Outcomes</strong>-Format — vom Befund zur Wirkung in 30 Tagen.</p>
+      <p style="margin-top:18px"><strong>Selbstdiagnose — 5 Fragen für den Soforteinstieg:</strong></p>
+      <ol style="margin:10px 0 0 0;padding-left:20px;line-height:1.9;font-size:.9rem;color:var(--text-m)">
+        <li>Wenn Ihr Team sagt „Es ist alles zu viel" — was <em>genau</em> meinen sie damit? <span style="color:var(--orange);font-weight:600">(D6)</span></li>
+        <li>Haben Sie ein einziges, von allen akzeptiertes Lagebild — oder existieren parallele Wahrheiten? <span style="color:var(--orange);font-weight:600">(D2)</span></li>
+        <li>Wann hat zuletzt ein Vorschlag aus dem Team zu einer sichtbaren Veränderung geführt? <span style="color:var(--orange);font-weight:600">(D3)</span></li>
+        <li>Könnten Ihre Teamleitungen in drei Sätzen beschreiben, was ihre Rolle gerade ist — und würde ihr Team dem zustimmen? <span style="color:var(--orange);font-weight:600">(D8)</span></li>
+        <li>Ist die Anzahl der Entscheidungen, die Ihr Team pro Woche treffen muss, in den letzten 12 Monaten gestiegen oder gesunken? <span style="color:var(--orange);font-weight:600">(D6/B2)</span></li>
+      </ol>
       <p>20 Minuten Lesezeit. Kein Beratungsvertrag. Kein Budget. Nur die Bereitschaft, ehrlich hinzuschauen.</p>
-      <p><strong>Und danach?</strong> Leiten Sie das Whitepaper an die Person weiter, mit der das Gespräch nötig wird: Ihren Vorgesetzten. Ihre HR-Abteilung. Ihr Team. Das Whitepaper gibt Ihnen die Sprache, die Sie dafür brauchen.</p>
+      <p><strong>Und danach?</strong> Leiten Sie das Whitepaper an die Person weiter, mit der das Gespräch nötig wird: Ihren Vorgesetzten, Ihre HR-Abteilung, Ihr Team. Die HumanFit Matrix gibt Ihnen die präzise Sprache, um Symptome und Ursachen zu trennen — und den richtigen Hebel zu benennen.</p>
       <ul class="cd" style="margin-top:24px">
         <li><div class="ico">✉</div><div><a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a></div></li>
         <li><div class="ico">🌐</div><div><a href="https://www.bmbdeutschland.de" target="_blank" rel="noopener">www.bmbdeutschland.de</a></div></li>
@@ -912,7 +912,7 @@ img{max-width:100%;display:block;height:auto}
 </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── NAV TOGGLE ──
 document.getElementById('nT').addEventListener('click', function(){
   document.getElementById('nL').classList.toggle('open');
@@ -922,6 +922,7 @@ document.querySelectorAll('#nL a').forEach(function(a){
 });
 
 // ── INTERSECTION OBSERVER ──
+document.body.classList.add('js-ready');
 var obs = new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('v'); });
 }, {threshold:.08, rootMargin:'0px 0px -32px 0px'});
@@ -1001,24 +1002,22 @@ document.getElementById('cF').addEventListener('submit', function(e){
     btn.textContent = 'Whitepaper anfordern →';
     var msg = document.getElementById('fM');
     msg.className = 'fm err';
-    msg.textContent = '⚠ Verbindungsfehler. Bitte versuchen Sie es erneut.';
+    msg.textContent = '⚠ Verbindungsfehler. Bitte versuchen     msg.textContent = '⚠ Verbindungsfehler. Bitte schreiben Sie direkt an info@bmbdeutschland.de';
     msg.style.display = 'block';
   });
 });
 
-// ── MATRIX MODAL ──
-var miw = document.querySelector('.miw');
-var md = document.getElementById('mM');
-if(miw && md){
-  miw.addEventListener('click', function(){ md.style.display = 'flex'; });
-  md.addEventListener('click', function(e){ if(e.target === md) md.style.display = 'none'; });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') md.style.display = 'none'; });
-}
+// Matrix modal
+document.querySelectorAll('.hc').forEach(function(el){
+  el.style.cursor = 'pointer';
+});
 
-// ── DATENSCHUTZ MODAL ──
+// Datenschutz modal close on backdrop click
 var dm = document.getElementById('dm');
 if(dm){
-  dm.addEventListener('click', function(e){ if(e.target === dm) dm.style.display = 'none'; });
+  dm.addEventListener('click', function(e){
+    if(e.target === dm) dm.style.display = 'none';
+  });
 }
 </script>
 </body>
