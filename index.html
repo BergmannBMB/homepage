@@ -4,8 +4,8 @@
 <meta name="cf-email-obfuscation" content="off">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HumanFit Check — Organisationsdiagnose wenn Maßnahmen nicht wirken | BMB Deutschland</title>
-<meta name="description" content="Wenn Organisationen die falschen Fragen stellen: Die HumanFit Matrix zeigt, wo Marktdruck auf menschliche Bedürfnisse trifft — und warum Maßnahmen trotzdem nicht greifen. Kostenloses Whitepaper für Entscheider in der Dauerkrise.">
+<title>HumanFit-Test — Organisationsdiagnose in 7 Minuten | BMB Deutschland</title>
+<meta name="description" content="HumanFit Check: 32 Fragen. 7 Minuten. Ihr organisatorisches Belastungsmuster sichtbar gemacht. Kostenlos & anonym.">
 <meta name="keywords" content="Organisationsentwicklung Diagnose, Mitarbeiterbedürfnisse erkennen, CX Maßnahmen wirken nicht, Kundenservice Überlastung, Chatbot ROI, HumanFit Matrix, BMB Deutschland">
 <meta name="author" content="Marc Bergmann, BMB Deutschland GmbH">
 <meta name="robots" content="index, follow">
@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://humanfit-check.com/matrix-chart.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="HumanFit Check — Organisationsdiagnose wenn Maßnahmen nicht wirken">
-<meta name="twitter:description" content="Wenn Organisationen die falschen Fragen stellen — kostenloses Whitepaper mit HumanFit Matrix, Hotspot-Analyse und Maschinenbau-Case.">
+<meta name="twitter:description" content="32 Aussagen · 7 Minuten · Ihr Belastungsmuster in der HumanFit Matrix — kostenlos & anonym.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"BMB Deutschland GmbH","url":"https://www.bmbdeutschland.de","contactPoint":{"@type":"ContactPoint","telephone":"+49-2103-33399-0","contactType":"customer service","availableLanguage":"German"},"address":{"@type":"PostalAddress","streetAddress":"Mittelstraße 23","addressLocality":"Hilden","postalCode":"40721","addressCountry":"DE"},"founder":{"@type":"Person","name":"Marc Bergmann","jobTitle":"Managing Director"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -332,6 +332,14 @@ img{max-width:100%;display:block;height:auto}
     .danke-card .dc-body { padding:32px 24px 24px; }
     .danke-card .dc-footer { padding:14px 24px; }
   }
+
+  /* matrix + test mobile */
+  @media(max-width:680px){
+    #matrix .st{font-size:1.3rem}
+    #test .st{font-size:1.3rem}
+    #test a[href="humanfit-symptomkarte.html"] > div:last-child{padding:48px 24px 52px!important}
+    #test a[href="humanfit-symptomkarte.html"] div[style*="font-size:clamp(2.2rem"]{font-size:clamp(1.6rem,7vw,2.4rem)!important}
+  }
 </style>
 </head>
 <body>
@@ -356,7 +364,7 @@ img{max-width:100%;display:block;height:auto}
     <li><a href="#cx">CX neu denken</a></li>
     <li><a href="#matrix">Die Matrix</a></li>
     <li><a href="#about">Über uns</a></li>
-    <li><a href="#kontakt" class="nav-cta">Whitepaper anfordern</a></li>
+    <li><a href="#test" class="nav-cta">HumanFit&#169; Check starten</a></li>
   </ul>
   <button class="nt" id="nT" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
 </div>
@@ -380,7 +388,7 @@ img{max-width:100%;display:block;height:auto}
   <div class="hq fi">„Wir kommen zu nichts." — Das ist selten ein Effizienzproblem. Meist ist es ein Bedürfnisproblem — in der Organisation, bei den Kunden, beim Einzelnen.</div>
 
   <div class="ha fi">
-    <a href="#kontakt" class="btn btn-p">Whitepaper kostenlos anfordern →</a>
+    <a href="#test" class="btn btn-p">HumanFit&#169; Check starten →</a>
     <a href="#kennen" class="btn btn-o">Was steckt hinter HumanFit?</a>
   </div>
 
@@ -455,6 +463,7 @@ img{max-width:100%;display:block;height:auto}
     <p>Organisationen reagieren auf Marktstress mit Prozessen, Technologie und Programmen. Richtig so — nur lösen sie damit selten das eigentliche Problem. Die Blockade entsteht meistens eine Ebene tiefer: dort, wo menschliche Bedürfnisse auf Marktdruck treffen. Dieser Schnittpunkt bleibt in den meisten Organisationen systematisch unsichtbar.</p>
     <p><strong>Der HumanFit Check macht ihn sichtbar.</strong> Grundlage ist die <strong>HumanFit Matrix</strong> — ein empirisch fundiertes Zwei-Ebenen-Modell mit <strong>5 Organisations-Realitäten (B1–B5) × 8 Bedürfnisdimensionen (D1–D8)</strong>, entwickelt auf Basis von jahrzehntelanger Praxis in Kundenservice, Organisationsentwicklung und Customer Experience.</p>
   </div>
+</div>
 </div>
 </section>
 
@@ -604,39 +613,15 @@ img{max-width:100%;display:block;height:auto}
 <!-- AKT 5 — DIE MATRIX -->
 <section class="sec sw" id="matrix">
 <div class="ct">
-  <div class="fi">
+  <div class="fi" style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:clamp(18px,4vw,32px) clamp(16px,4vw,32px) clamp(16px,4vw,24px);margin-bottom:24px;box-shadow:0 2px 12px rgba(26,59,85,.06)">
     <span class="sl">Das Framework</span>
     <h2 class="st">Eine Landkarte für Organisationsstress.</h2>
-    <p class="sd"><strong>Marktlogik × Menschenlogik.</strong> Die HumanFit Matrix kreuzt 5 wiederkehrende Organisations-Realitäten (B1–B5) mit 8 empirisch validierten Bedürfnisdimensionen (D1–D8) — und zeigt, an welchem Schnittpunkt Interventionen wirklich greifen.</p>
+    <p class="sd"><strong>Marktlogik × Menschenlogik.</strong> Die HumanFit Matrix kreuzt 5 wiederkehrende Organisations-Realitäten (B1–B5) mit 8 empirisch abgeleiteten Bedürfnisdimensionen (D1–D8) — und zeigt, an welchem Schnittpunkt Interventionen wirklich greifen.</p>
   </div>
-  <div class="miw fi" onclick="this.querySelector('img').style.transform=this.querySelector('img').style.transform?'':'scale(1.5)'">
-    <img src="matrix-chart.png" alt="HumanFit Matrix: 5 Organisations-Realitäten × 8 Bedürfnisdimensionen" loading="lazy">
+  <div style="border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(26,59,85,.13);border:1px solid var(--border);width:100%;background:#1a2f4a">
+    <iframe src="humanfit-matrix.html" id="matrixFrame" width="100%" height="1120" style="display:block;border:none;overflow:hidden;transition:height .2s ease" title="HumanFit Matrix interaktiv" loading="lazy" scrolling="no"></iframe>
   </div>
-  <p class="mc fi">HumanFit Matrix · März 2026 · BMB Deutschland GmbH · 5 Boxen (B1–B5) × 8 Dimensionen (D1–D8) · Leserichtung: Welche Box trifft Ihre Organisation?</p>
 
-  <div class="hg fi" style="margin-top:36px">
-    <div class="hc red">
-      <div class="htg">Top Priority</div>
-      <h3>B2 × D2 / D3 / D6 / D8</h3>
-      <p>Kontrollverlust trifft vier Dimensionen gleichzeitig. Entscheider verstehen die Lage nicht, können nicht handeln, sind überlastet — und die Rolle bleibt unklar.</p>
-      <div class="hpc">60%</div>
-      <div class="hpl">der Projektauftragslage</div>
-    </div>
-    <div class="hc amb">
-      <div class="htg">Positionierungs-Hebel</div>
-      <h3>B3 × D2 / D4 / D5 / D8</h3>
-      <p>Eindeutigkeitssehnsucht aktiviert die „weichen" Dimensionen. Kunden und Mitarbeiter suchen Haltung, Gemeinschaft und Sinn — nicht Features.</p>
-      <div class="hpc">30%</div>
-      <div class="hpl">der Projektauftragslage</div>
-    </div>
-    <div class="hc grn">
-      <div class="htg">Einstiegssignal</div>
-      <h3>D6 — Querschnitt</h3>
-      <p>„Es ist alles zu komplex" — ein Frühwarnsignal, das auf fast jede Marktbox reagiert. Oft der erste Hebel, hinter dem tiefere Bedürfnisse stecken.</p>
-      <div class="hpc">90%</div>
-      <div class="hpl">diagnostischer Einstieg</div>
-    </div>
-  </div>
 </div>
 </section>
 
@@ -769,171 +754,108 @@ img{max-width:100%;display:block;height:auto}
 <div class="dv"></div>
 
 <!-- AKT 7 — WHITEPAPER / KONTAKT -->
-<section class="sec cs" id="kontakt">
+<section class="sec cs" id="test" style="background:var(--bg-c);border-top:1px solid var(--border-l);padding:0">
+<div class="ct" style="padding-top:48px;padding-bottom:0">
+  <div class="fi">
+    <span class="sl">HumanFit-Test</span>
+    <h2 class="st" style="margin:0 0 12px">32 Aussagen. 7 Minuten. Was wirklich los ist.</h2>
+    <p class="sd" style="margin:0 0 20px;max-width:640px">Anonym. Kostenlos. Keine Anmeldung. Der Test zeigt, welche Organisations-Realitäten auf welche menschlichen Bedürfnisse treffen — und was das für Ihre Handlungsfähigkeit bedeutet.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;padding-bottom:32px">
+      <span style="font-size:.8rem;color:var(--text-m);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block"></span>32 Aussagen in 3 Blöcken</span>
+      <span style="font-size:.8rem;color:var(--text-m);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block"></span>ca. 7 Minuten</span>
+      <span style="font-size:.8rem;color:var(--text-m);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block"></span>HumanFit Matrix als Ergebnis</span>
+      <span style="font-size:.8rem;color:var(--text-m);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block"></span>Organisation &amp; Kundensicht optional</span>
+    </div>
+  </div>
+</div>
+<div style="background:var(--bg-c)">
+  <div class="ct" style="padding-top:0;padding-bottom:0">
+    <a href="humanfit-symptomkarte.html" style="display:block;text-decoration:none;border-radius:14px;overflow:hidden;box-shadow:0 28px 72px rgba(15,30,55,.28);border:1px solid rgba(255,255,255,.07);transition:transform .25s ease" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="background:#dde0e5;padding:11px 18px;display:flex;align-items:center;gap:8px">
+        <span style="width:12px;height:12px;border-radius:50%;background:#ff5f57;display:inline-block;flex-shrink:0"></span>
+        <span style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block;flex-shrink:0"></span>
+        <span style="width:12px;height:12px;border-radius:50%;background:#28c840;display:inline-block;flex-shrink:0"></span>
+        <div style="flex:1;background:#fff;border-radius:5px;padding:5px 14px;margin-left:10px;font-size:11px;color:#888;font-family:monospace">humanfit-check.com/test</div>
+      </div>
+      <div style="background:linear-gradient(175deg,#0e1c31 0%,#14273d 55%,#0b1e33 100%);padding:80px 60px 88px;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;top:-80px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(224,120,32,.08),transparent 65%);pointer-events:none"></div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(224,120,32,.75);margin-bottom:32px;font-family:'DM Sans',sans-serif">BMB Deutschland GmbH · HumanFit Matrix ©</div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.2rem,5.5vw,4rem);font-weight:900;line-height:1.08;letter-spacing:-.025em;margin:0 auto 32px;max-width:760px">
+          <span style="color:#f2f6fb;display:block">Wie gut fühlen Sie sich</span>
+          <span style="color:#f2f6fb;display:block">in Ihrem Unternehmen?</span>
+          <span style="color:#e87425;font-style:italic;display:block;margin-top:4px">Was bleibt auf der Strecke</span>
+          <span style="color:#e87425;font-style:italic;display:block">im Wandel?</span>
+        </div>
+        <p style="font-size:15px;color:rgba(200,218,240,.52);line-height:1.85;margin:0 auto 52px;max-width:480px;font-family:'DM Sans',sans-serif">
+          Anpassung, Effizienz, Veränderung — das bestimmt den Takt.<br>
+          Menschliche Bedürfnisse treten dabei systematisch zurück. Die<br>
+          HumanFit Matrix macht sichtbar, wo genau — und was das für<br>
+          Ihre Handlungsfähigkeit bedeutet.
+        </p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:48px">
+          <div style="background:rgba(224,120,32,.16);border:1.5px solid rgba(224,120,32,.42);border-radius:9px;padding:13px 22px;text-align:left">
+            <div style="font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(224,120,32,.82);margin-bottom:4px;font-family:'DM Sans',sans-serif">Block 1</div>
+            <div style="font-size:13px;font-weight:700;color:#ddeaf8;font-family:'DM Sans',sans-serif">Belastung &amp; Handlungsraum</div>
+            <div style="font-size:10px;color:rgba(200,218,240,.4);margin-top:3px;font-family:'DM Sans',sans-serif">11 Aussagen</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:13px 22px;text-align:left">
+            <div style="font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(200,218,240,.32);margin-bottom:4px;font-family:'DM Sans',sans-serif">Block 2</div>
+            <div style="font-size:13px;font-weight:700;color:rgba(221,234,248,.38);font-family:'DM Sans',sans-serif">Zusammenarbeit &amp; Kommunikation</div>
+            <div style="font-size:10px;color:rgba(200,218,240,.2);margin-top:3px;font-family:'DM Sans',sans-serif">11 Aussagen</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:13px 22px;text-align:left">
+            <div style="font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(200,218,240,.32);margin-bottom:4px;font-family:'DM Sans',sans-serif">Block 3</div>
+            <div style="font-size:13px;font-weight:700;color:rgba(221,234,248,.38);font-family:'DM Sans',sans-serif">Sinn &amp; Handlungsfähigkeit</div>
+            <div style="font-size:10px;color:rgba(200,218,240,.2);margin-top:3px;font-family:'DM Sans',sans-serif">10 Aussagen</div>
+          </div>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:12px;background:#e87425;color:#fff;font-weight:700;font-size:16px;padding:17px 40px;border-radius:9px;font-family:'DM Sans',sans-serif;box-shadow:0 10px 32px rgba(232,116,37,.38)">HumanFit&#169; Check starten →</div>
+        <div style="margin-top:22px;font-size:11px;color:rgba(200,218,240,.22);font-family:'DM Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase">32 Aussagen · ca. 7 Minuten · anonym · keine Anmeldung</div>
+      </div>
+    </a>
+  </div>
+  <div class="ct" style="padding-top:16px;padding-bottom:48px">
+    <p style="font-size:.7rem;color:var(--text-m);margin:0">🔒 Anonym · Lokal im Browser · <a href="#" onclick="document.getElementById('dm').style.display='flex';return false" style="color:var(--text-m)">Datenschutzhinweise</a></p>
+  </div>
+</div>
+<div class="ct">
+</section>
+
+<section class="sec sw">
 <div class="ct">
   <div class="fi">
-    <span class="sl">Whitepaper anfordern</span>
-    <h2 class="st">„Wenn Organisationen die falschen Fragen stellen" — kostenloses Whitepaper.</h2>
-    <p class="sd">Ein Zwei-Ebenen-Modell für Entscheider in der Dauerkrise: HumanFit Matrix, Hotspot-Analyse, vollständiger Maschinenbau-Case und konkrete nächste Schritte. 20 Min. Lesezeit.</p>
+    <span class="sl">So begleitet BMB Deutschland Sie</span>
+    <h2 class="st">Von der Diagnose zur Wirkung.</h2>
+    <p class="sd">Vier Stufen — von der ersten Orientierung bis zur messbaren Wirkung in der Organisation.</p>
   </div>
-
-  <div class="cg">
-    <div class="cif fi">
-      <h3>Was Sie erhalten</h3>
-      <p>Das Whitepaper enthält das vollständige Zwei-Ebenen-Modell: <strong>5 Organisations-Realitäten (B1–B5)</strong> × <strong>8 Bedürfnisdimensionen (D1–D8)</strong> mit Leitfragen und empirischen Korrelationen, die Hotspot-Analyse (B2 × D2/D3/D6/D8 und B3), <strong>8 Frühwarnsignale</strong> für die Praxis, einen <strong>vollständigen Maschinenbau-Case</strong> (140 Agents, 6-Wochen-Pilot, messbare Ergebnisse) sowie das <strong>Guided Outcomes</strong>-Format — vom Befund zur Wirkung in 30 Tagen.</p>
-      <p style="margin-top:18px"><strong>Selbstdiagnose — 5 Fragen für den Soforteinstieg:</strong></p>
-      <ol style="margin:10px 0 0 0;padding-left:20px;line-height:1.9;font-size:.9rem;color:var(--text-m)">
-        <li>Wenn Ihr Team sagt „Es ist alles zu viel" — was <em>genau</em> meinen sie damit? <span style="color:var(--orange);font-weight:600">(D6)</span></li>
-        <li>Haben Sie ein einziges, von allen akzeptiertes Lagebild — oder existieren parallele Wahrheiten? <span style="color:var(--orange);font-weight:600">(D2)</span></li>
-        <li>Wann hat zuletzt ein Vorschlag aus dem Team zu einer sichtbaren Veränderung geführt? <span style="color:var(--orange);font-weight:600">(D3)</span></li>
-        <li>Könnten Ihre Teamleitungen in drei Sätzen beschreiben, was ihre Rolle gerade ist — und würde ihr Team dem zustimmen? <span style="color:var(--orange);font-weight:600">(D8)</span></li>
-        <li>Ist die Anzahl der Entscheidungen, die Ihr Team pro Woche treffen muss, in den letzten 12 Monaten gestiegen oder gesunken? <span style="color:var(--orange);font-weight:600">(D6/B2)</span></li>
-      </ol>
-      <p>20 Minuten Lesezeit. Kein Beratungsvertrag. Kein Budget. Nur die Bereitschaft, ehrlich hinzuschauen.</p>
-      <p><strong>Und danach?</strong> Leiten Sie das Whitepaper an die Person weiter, mit der das Gespräch nötig wird: Ihren Vorgesetzten, Ihre HR-Abteilung, Ihr Team. Die HumanFit Matrix gibt Ihnen die präzise Sprache, um Symptome und Ursachen zu trennen — und den richtigen Hebel zu benennen.</p>
-      <ul class="cd" style="margin-top:24px">
-        <li><div class="ico">✉</div><div><a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a></div></li>
-        <li><div class="ico">🌐</div><div><a href="https://www.bmbdeutschland.de" target="_blank" rel="noopener">www.bmbdeutschland.de</a></div></li>
-        <li><div class="ico">📍</div><div>Mittelstraße 23, 40721 Hilden</div></li>
-        <li><div class="ico">☎</div><div><a href="tel:+492103333990">+49 (0) 2103 / 33 399 - 0</a></div></li>
-      </ul>
+  <div class="gs fi">
+    <div class="gsi">
+      <div class="gsn">1</div>
+      <h4>HumanFit&#169; Check</h4>
+      <p>32 Aussagen. 7 Minuten. Ihr Belastungsmuster sichtbar — anonym, kostenlos, ohne Anmeldung.</p>
+      <span class="badge ok">✓ Verfügbar</span>
     </div>
-
-    <!-- FORM -->
-    <div class="fc fi">
-      <form id="cF" method="POST" novalidate>
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-        <div class="fr">
-          <div class="fg">
-            <label>Vorname <span class="rq">*</span></label>
-            <input type="text" name="vorname" required placeholder="Ihr Vorname" autocomplete="given-name">
-          </div>
-          <div class="fg">
-            <label>Nachname <span class="rq">*</span></label>
-            <input type="text" name="nachname" required placeholder="Ihr Nachname" autocomplete="family-name">
-          </div>
-        </div>
-
-        <div class="fg">
-          <label>E-Mail <span class="rq">*</span></label>
-          <input type="email" name="email" required placeholder="ihre.email@unternehmen.de" autocomplete="email">
-        </div>
-
-        <div class="fg">
-          <label>Telefon <span class="rq">*</span></label>
-          <input type="tel" name="telefon" required placeholder="+49 211 123456" autocomplete="tel">
-        </div>
-
-        <div class="fr">
-          <div class="fg">
-            <label>Unternehmen <span class="rq">*</span></label>
-            <input type="text" name="unternehmen" required placeholder="Unternehmensname" autocomplete="organization">
-          </div>
-          <div class="fg">
-            <label>Position</label>
-            <input type="text" name="position" placeholder="z.B. Leitung Service" autocomplete="organization-title">
-          </div>
-        </div>
-
-        <div class="fr">
-          <div class="fg">
-            <label>Branche</label>
-            <select name="branche">
-              <option value="">Bitte wählen...</option>
-              <option>Maschinenbau / Industrie</option>
-              <option>Automotive</option>
-              <option>Dienstleistung / Beratung</option>
-              <option>Handel / E-Commerce</option>
-              <option>Finanzdienstleistung</option>
-              <option>Gesundheitswesen</option>
-              <option>Öffentlicher Sektor</option>
-              <option>Sport / Entertainment</option>
-              <option>IT / Software</option>
-              <option>Sonstige</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label>Unternehmensgröße</label>
-            <select name="groesse">
-              <option value="">Bitte wählen...</option>
-              <option>1–49 MA</option>
-              <option>50–249 MA</option>
-              <option>250–999 MA</option>
-              <option>1.000–4.999 MA</option>
-              <option>5.000+ MA</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="fg">
-          <label>Ihre Herausforderung (optional)</label>
-          <textarea name="nachricht" placeholder="z.B. Fluktuation, KI-Transformation, Servicequalität..."></textarea>
-        </div>
-
-        <div class="cbg">
-          <input type="checkbox" id="ds" name="dsgvo" value="ja" required>
-          <label for="ds">Ich willige in die Datenverarbeitung ein. Widerruf jederzeit. <span class="rq">*</span> <a href="#" onclick="document.getElementById('dm').style.display='flex';return false">Datenschutzhinweise</a></label>
-        </div>
-
-        <div class="cbg">
-          <input type="checkbox" id="nl" name="newsletter" value="ja">
-          <label for="nl">Ja, ich möchte den BMB Newsletter erhalten. Abmeldung jederzeit möglich.</label>
-        </div>
-
-        <div class="cbg">
-          <input type="checkbox" id="nc" name="notify_check" value="ja">
-          <label for="nc">Bitte benachrichtigen Sie mich, wenn der HumanFit Check (SaaS) verfügbar ist.</label>
-        </div>
-
-        <button type="submit" class="btn btn-p fsb" id="sB">Whitepaper kostenlos anfordern →</button>
-        <div class="fm ok" id="fS"><strong>Vielen Dank!</strong> Ihre Anfrage ist eingegangen. Eine Bestätigungs-E-Mail ist unterwegs.</div>
-        <div class="fm err" id="fE"><strong>Fehler.</strong> Bitte erneut versuchen oder direkt schreiben an <a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a>.</div>
-        <p class="fn">🔒 SSL-verschlüsselt. Keine Datenweitergabe an Dritte. BMB Deutschland GmbH, Hilden. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO.</p>
-      </form>
-      <div id="dankebox">
-        <div class="danke-card">
-          <div class="dc-bar"></div>
-          <div class="dc-body">
-            <div class="dc-logo">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAAyCAYAAAC6XKUOAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAiwklEQVR42u19d2AdxbX378zs7q3qzZJVbCP3hi06gWsbbEwJ5cE1LbQUIEDCI3kJ+dLEzfeSwEvCe3wk5GFSnJ5YkBDAAYObqAZcwCYCx7awZEuyerl9d2fO98eV3MBUEwS5v3+kK909M3t2zm/OOXNmFsgiiyyyyCKLLLLIIossssgiiyyyeHtQVgVZ/KuCAWoIQ4SPoMwGAEsaoABgeRiypOud2Vh3KXjkuiyyyOKfSAJrQzC4HiKrjayHkMW/8FjnMAQdMAtfOqm8+Lgqa+JJY9hflmPwkMOybcDOMSVpxe/ONiSBLQnA8Pbf8psdz24EnHtOKzunOiiLky6YBGikZQ3sYyMmsGWA+mwxcM2jex78sJVkZMdJFh97r6AeQkSgqQHq3MlVFZ+fpcOVfjrHJ8Rcr6EK/QYgyUa+B6gpe29zpGYgYADN0VR/cFpJNZq6naOL5f87sdwYP5hWkLRfLhEghz8qBgIm4bVB0QrQgwQGZwkhiyw+GNSHYFAELjAr8PiF0a9NyNU3VPqpkEiByIUEwCQB1mBQxmfmA3xnfgd+NGdmfdMALAFZmutRAGAICBiAx6UMAVDGM3A0kLC1ywQiQBkgYUn040OlgiwhZPExx9oQjPmNcG8/pey48ycO3DshqI62bQYTkFIC/Snq7HfFq2nX3dmXImgiZn7PYbS2DIg+x+hpdgpdYA/+EbPuGWzlSUkHmoiImQ2PIQcHE2rmvEq5QEIpl2FwhifkaNBZlhCy+FiTwV2hkosumGj9psTrepM2WJNB2wfx1I4o/fQvO/mx329t7T/yrb8OAPjUw7v+643/KyvddLm12iu10gwJHg1+QZYQsviY5wwoAveeM6sXnDdW/zHX40BrAz226N7ar28+/y97/njgd7Evxxd6322vWwfMb2x0AYDDkJgWou19bXLKj3ekb5lZNuPKo81V0/N0ma0Z24YomWtolZtLQc3Z55ZFFkc+Z1APwQy6+fiacU1XVw3GbxjrJm4cy1uvqnnl2rqqo0ZIYHkYkv8Jq2z1ocyke9WM8ikvX1HZlrypguM3VOhtV9d0XTuz+rRXr6rYw/8+lrd/pmoL8OEv+2XXYrP4WOE2AETgi2uceybmci6I0RqTO25Zrxct3bh754Zr60yKQC9pgKJ36a0zQMvD7zzWrw/BiDTCvWlG0ZQvzZGrJ+VyhdLgtoTs/9N2d+HSra1rAZEzmmKGLCFk8bHB8jAkRaB/fVbl4qlF8syE46retOAVreqiVdt2t68NwThm6UbnPYonQqaa8J0UNY2QwVUzyqdcO8e3elKurlDMvCdh9v/iVXfRt59pe/msmpJS0todTTrMEkIWHxsMlyDTlAJ81S81W4Yptw3ih19e2/byhmthzm/EezW+kcXI4J0LKj5JEei3IoURMvjM9MKpX5orV0/M5QrF4Pak6Pv1a/bC25/v2Mj1EM2O6fAoKw3MEkIWH5vcATVA1Ycqjyr24lStmdpi3P/gLv1DZtDDS9/zPgHietDNs/Py14arf/fZGeZDyxZV35ohhZBxODK4YvqYqTfP9a2alKMrNIP3JM2+Za+qRd9b37FpJGwZZhoFsMr8pCwhZJHFkcC8dSEBACcXW6eX+khKSehM6L/95MX2XjRARDK1Q+8aa0MhSRHoY6rzr55XTeearpM4byJuX35W5Vco0ugeSAprD/AMvlJnrJqYiwrN4Lak6Pv5q7zoe+s7Nq0NwahbutEFAM1MDosCmFLaLPKyHkIWWRwpQpjXCAAoDThzPaSRUALdtvkIA7TuJ+996p3f2Ki4HmJHe/HSZzvc30lT+A3tpM4Yh/9admbV10dIoX647uGK6WOm3jLXt2piDldoZt6dNPuWbXEX/WB966aR2oiRzhgdHUNbhsxLtvQa4R1xuh4fctlyFll8bDAS02+6svop9cWxvOezFc6vzp84dSSceJ/i9+1EePqy6t+7X6zkoc+XJwdurOLfnDn26yNfumbamGkvX1nZnrxxLMduqNDbrq7s+coJ1XNHvIePgh5HV0ojHD78kk5Dg8b+ZSJCOJx5yA3TGIjoN723ke9krlfvQv7hIlWBcBO99+tHMQ7UTUODeotgXaBpWAf/vHsWCIffsk1mEBH41SsqN04uxNzXh8Tgz5pSk7//fFcnD68QvC/CAQiZNvTTl1b//vgSfWnSUSkI6X2oGf/x551qReR4sfaoPB7Dmnh3Qvb98hV34R0b2jePeAaHyqytrfV87aj0jRU+Cnal0X71o60/y1L7u8scicMa6pFpQByB/v0TSLZeAJzdun4IIQDAP66u2MA3j+VXr6kcDNeUjNlnzEeijUyCUQDAU5dW/979YhXHPl+RbvnsWN5yRWUsdkMFJ2+o4G3XVPXcemLNnMN5BiP9mVReXrz1ykrNX63m1z5d1TIaZujR5MZQ5YnnngLD8MEFBLsKJLWjIV3XSYo9j2zujETiAFBxzKIq4cufBmYSg3u7WrdGNmWMJKJHdFpeXu6T4048BQbAdjpt7H1lvTvm6BPI8niUmwaxVCDFUguRUvG4fn3j1t7eSBT7l5gO9aS46tgzprO3sJJUkl1ImJq1w0xkJ2KuM9DcFYl07jfYiP7gyCCigcgRlVp9widP1qYvqJxkrGP9w88cxpvk6uPPrtNWbrFKR1mnWp/p3LIlfhidHSkPlquPOW2C9uVNBAzAib+yZ/2Ktrdrkz6YzjBHRkqjWy9rvLQKJ5eIS/NZOTkGAoIIrQmj5zdb3UV3bNh9WM9gn/HJuLYo2IWULjJI9o0GIxwNhEAAOBwOi3VtYjlJXxngQhgmmARYM+Da0LWX7iou6/1az5bH/5R2xPVmbs7XtWMDuWNV8cz5C3q2Rp5EKGSgtJTR0KDcsXN/pzx55xMraMhowiiZbgjfQyR9OUwWpLQAIiitANcPOWnBnrJ47w2dW9Y8jHBYHuQ2h0ISjY1uWgS+QlbwKm0TSJjQIrNtVpt+kMrrLzmucqVK9nylb2tkDzIJW73PiEPrDvY+GhvVvgEdGs5UD/d9n5scymTO0dioAWiEQgYaI27hzNBFpi+nrNMXvRc+n8Rjj9kZWYe0c7C8jK5DoYPDpsZ5mhDRtvD+FmbuOKWoGUDtQd9rbNQIhwkNDSpN3jvJDJyqFCOZ8E4H0ASEBUJdB9jgPKC0iQ/R4YH3yPvu7cD7O5D0QusEMM4AdrnxeOBqw8j/FsBgl64DsHTkmXwIg/UAUth92aolVThljHEpKxctcdlz7zZadOeG9s1rQyFj/tv078SxRaaQjg9gw3G1HklWMP9rE8J+V4ooyq4qBsCI9z3BUm4D0xmQvkkwPeOEP/i/AB5QEEnpKqW0skl6fJRTvLyw9rhj+ubNa0ckokvmnBmhYOn5ykmnSUgDhCiRYBYUZVf5wQxO9f9VC7kHwCI2PJPgCVYy809qaxc/vqOhwX7T/gmR1K5SrIUSTjIOcLMCSoU0qtj0FZAlLxGGcVLe7DNCgy+vbAEgUF8PRCIajdCHI8PDDGw9bCj7Daqx0S2cefIJZn7lcij3u2h8xAVGZqBhz6HxsMtrYljmIW01DjcmYuxqxSTib9qnrq7MWCER166rtNaKpDFs8A1qWMxBMg8hQPeQz/pNdXHQfQxvEjru3H6llM5sTpb2KJjBMqTAEES7L2u8pMYo9ZqLljUlT7/zhe6XM57BW5BBPQgR8MkFTrVfcq4GIa1FDwCoiyDpQzxbcXRlPhkCxFIQwY5Hfzrw9zUPl5eXFzvjT21lJTxEZm5NTY0xCAcgSGKYcG0Xhr/MKKr4KyKRY8vmnr6Eg0Xf1q5tE7QJCMEgMRxnCiKWQhCkM/TDzs2rn6utPbpksHTyLrjkJSFznUCHD0D6TV1SZgFoKaWQpNX9nc89cHnJtGlBmGNnkz9/mZaeamH6qi0r/XMApyMcJkQiqnjq8RNlTukFbOUUCm1DpZOvdm9c8XsATnl5nR9VFZdKb9Cj7WRP+/oHlwPA2DkLZlGg+BMAIId6n2tpXL25cEroBDOn9BEtLcBOnDz2pAs/x1AyFR96uO/lSFvpjE/M4mBJmKTX0tpWIhVb7+tLPd7S0pgGoGtra3Nj+VM+pUzfUURkg1VC2v0rOjau2QSwhCApXGWXT6ortvMrP+2xfIXKtW0d3fur7sbGnft0QJl6ftZKAEBe9cwCX3nNAlf46oSUBKUEpaJPd25+7GEAQF2dWWFWXAYzEOREf196786njMrpFxumr0S7qaTo3vOL9p0bdmc8s4gqn3HiFBUcezFMj59TsT6t1URiTSAhwKMjd0LI9IQAhP5oXnH2RHvsiu3dzcvDkPMb3rYiUhCga4LihAKPhmLwQIq3AQCmfbhphFG7FEIeq7zyhEWF6SQ+SUQGhBTkpla0tLSkS4qmp/arVhqsHMCTO7f42HNXa+GZxSw0iK1MvPHm0NJXUTZrYemgYZ4FkgaEFMqOP97y8stDbwgZ3mJYTCsJpxobI88Uzl54o8wtW6ldxyXLt6B45oI5PQ0Nm8pmL7xaB4t+zJ6cALECkx/w5KH0uPM+rXa+dg7lCcsR3p9pKw/KUbuQObiXbeFbLDx5dxAIaRn9QuUxCx3bU/iskl5iO6WlN2++a1rzBQDu7d1SOuPUasotXwsr4GEAggIQ/gLYYucZaMHjZbNCM6LB0r9oM1gLIQEhIQwDzqAIATgdIIO0C6W5igvHbTFzSsodxwGZARDomtIZC47pemVNJ2hkwDI5ZKWq5pxUkfSO3cT+/DKhFTAS5lmBr46pO/MHezc++tXaQekbLPXeQ1aOH7YNqpw1KHLK8lw3BTaDUMV0SS2J43c0LI+Wzll4mvIV/hVWIMDSgrACgJMEu45LpndUjVfad57SjvSK7Wiur4dYEnlHs7tmgHJM90oJIO4a1BbTa4DM9ukPE6OuMImIoLTWwlt4d0oUtlFu6S9YGJLtRMzo210PgA3LMwDWgBCC7FgbVHoImhX58uex6SmU2hGUGtxKrBlEh1AzQ2vNrif4Wx0oaKNA0S9ZCANOoheDu78FQKOh4R1GcYzGWAchHJYKXS/ASfWDIEmazIH8sTWzZ+ezP38pm4GAivc9I7p3TuWh3efBSfSJQNGpNG7iF9tfe7EP4AFtp1wB3bef58yEdtKuslMuSzNhp5NlynVWQrkuSVPo5OBzqqe1Xg3u/aZODTXpYNnn2PRb2k3bFG37nOrePlXHeu4GUxKA0N6in2krp5aVrZHob0O85zc61vek1G7H/mHqgix/KZPIVUPt93J6qF05KVt7cyrZ6180fMty5EmJZCztUmm5IFGoYt3fcoY6ZnHntpM5PdSrGdo1c65Gba0H6EsD6ONU0tVWDogkq8GOpZyOdrKTdODJndKfXzIPINae3PvY8AfYSbsc7fgtD+39MjvJZhLGaF1VYQBUD4hI5O2rIZeHIUUE+scLJ55Sk2scozW4I6m6frktvpYAzGv8cI9iF6NRuwIMAdUloJvZSfcTSJA0/G7ZpIcLp586NZVMFAAEklIwxPOIdl4uiCVrNyEME9qO/cmrYjeSNMWhGRoNkZnimHtYmK9pxx4AQ7D05suiCSuLZ54yd38s+w7RMI1l3KMZ5ABEIMAgGU8aZWexJ2gKN6WlSm7WnkC5Yk8Uyu7UDA3Td1ZhYWGOhiAQGbzfYyPWbIDIAMFg5oKurU+v5ljfz0gIQwgBKY2/9rz02He6Xnzou4MtLw9Ile5gKYlZCPbmXke+glO6nn/w5o5Na54qmT5/JgzreHZtDeW0O0PNJ3etf+DKrmf+EMofbLphWPOuFgZIpQcR6wh1P//Q9WTH7hJSWqQ1w5DlB+fvmbXP9Mjo0F5z77bpPc8/+J8iNtiLYMlskDTBWhCYy/x+w7IsBkNCSkOo5BD17prf/eKD1yGV+DkJwwSYDenxFc5eMBaGdzxYM1xnZ88LD13R9eJDd7KduI+ElGCN0UoK77A0msLTQsSAObckdXeOoVgaglrjxrJVzf2DenlY0odcyzL6SpeZQUIKN9H71e5nl0/ngebplE78jUgQeQLlZrD4S8RuaqTUhImKe/7+9COId39dWn4/p4a2dXdtuVp78syMd8BvIl+QmYp9tueZ383UvS0z4KZWgkjACtbAV/JNAPyGVYHDeY3JfgIi2uvPGUNSFjOzYgZRqmtISV8lAVpr1uzNvwnBkjUiWLiGpXcqtCvAekzCk5+fOaCboVmofbkLdpIjxkdgDdQLWFbeSHkrC8Oqq7vWRN21JgC4Q9tup3jf/VLCEFbuMRQoXFpywkXNFdNPqTI8Vi6EYEhTsJNuHnh1cwuuvdcECNu2bYsOt8KCJMDc0rP16Y0IhQytaTBDqIKg5SGKJDak6d+zfU1bLFhSVXLCRU/K0gltIPoBhnMLICI3GNx/4jhJaNftumH7i1sQChnC8m7P3B8RS0ox5DgiwSAiVukOgFC7+AseIlO8s9NORzWIr60zKNLoPnJ+9f+dW4hZmrVujYmeFR3pHzKDsKThQ2e8UbuXgRUnGEDPaxs7lHaaQYLYdV1tenIFkRwxdIJWQL3o3LTy+zzUdjsnBi5FS0sKWnvfav2G2B0CgL7t69uESu8gQaRd1xWCSjIrZ/P02zIXwHW+Zi6btXCGGyi6m4XFJATBTnYVbm7cIlh3staCpBRsJ//sT/WNAbhcOGqMa/dWIj24uNR0o8RaZzKeXLyPwaRxAR+UA4nojDOZmSbZtSs3blzqlDnrC8pmLSzt3bYt2vX8n8Pm0J6jVXLwAXbTtvDljbP9hbeaPe2vkFYE5Srh8U0vnBI6AUuvc2pq2Fs2+/hx3943DhhMQgDXmmhsdEeSh4cbOyqdilYes3CGJ1iwWvjzT+F0/Lfd6x8IauXsImmAmN3eZ5+NlpSU6H3+HwmxtLzci8ZGl4RU+71CaRiO3UmsibViMqzx5eXs3/HY3WmAzP3+40cP9SEYksC0dKPzh3Mqv/KJCr7VUU6KpCVf7uEv3/303m4sgaBRcIOjLUmjGHA1mC1/zoXFx547g4ScpqX3QlaOI70BUw/1vSakpxsMNzNVkgtENMLLZVfDkv8zIkpAOOBMtpcYKjO/sALgsmYoy39l8bEXnC7As9j0nMeO40qv3+D04HPIZHcOqCPYl+DQIHK16yqQdUbJyZe+2MLaAw9NhuGxwBqCGGQPfaEJsIuGep8Q0jPA3tx8MqzFMdv9AvW1rYXHEzCs4HnksezW1tbPF1cc28VAoRByTOnx569jGEH25cxlJ50U0jRZCAUAQoidBCGU67ok5OVFx100mz2e8cIe+nzx0YtmCH/e1Fh86F7LGXoRRsm5mhkkqKC1dWt/Sen41SIneJpyuEAUjHmi+NjzmhJWoEA4ydhtQN3/ghRndKqAfj2sRb1PhySG/wYFhksESiWjiRSXn09WEOykU+QkNpfMXng0G55xrBwHQvhL6874bF9f+wOcU2oTwyWGsqyOEVmckc/QYF93U2Nz8fEX7IY3r0rDW+lUX7i2qEo1w/ScpZWbJmlJEPFbL12/6xCVbgMI9e9j4EYOWlIEAExvApVMA532HbiRRrhArWf1xfZ364r4y4LdVNAyvSs73J9f+FDbr9eGYFADRsVBKaOrDgFcIAzLYK1A/qIrpBCZtUI3Dc0MjvU8qfpf/RFyJ95oGYbBTFBpzmwbnfZ3Rjgs0VwgsHGpo6FNYRgGwFCOXcisiYFCYVgGtA1YhdcbJMBgsHIhlQ0V611lRbfdAYCGC4cO8SpUQEjT0MoxSFgeCFFMDDBrQDmAVq1uevBbfZtWLkcoZPQ2NraXzgyFIYz7yPSOI3/+N0g73xgui4eK9fwSAEw7tlR7c/6HySPIm3sqJwehY91bZKBwFkkTpLQHAErt1ue6U9YTRrBooWbLEEIeT2CI5MCQIsMwAsWXeL25lxAArRXgJKIy0fe/AJM3evKVScPzJ2H5PwHDCpIv9zghBNhNvyQALgEXCMM0tJssOOB+PcIwDUCCU9qX8Ys4TximwcqAxyoICju1FnZMs5XjRV7Fj5COgaCTJKXJRjAPzPclqHclhq9zoffJF6wtNkwDYJATDQDQMtlztZbmH8kMlJDHfxy0c5xODmmyLCEMA2ynPe97xq6HuG24LmP4XAI+YoWfb5QjHji36pzJBenbaoOYYys3HfCY3rWd+PPi5W3Xc/jDrTsYjYTAANDQ0KBLZ5/5OU5F86E1uyS01A5DACQ9jmB+vXPjihcAoGz2UX9QAx0dgITg5O7Mg4jw8IyuAcCKRzfGnNQ1ACC0jhdQcddgYuAqpIYCUAqukAraYQmApMWu1Nt6X3x0w35n5QD3bbiIxk3GfyyVuwaOMxyMaFYAJCSkSbu4dePG7s7OOFAv0BhxAYiurY2rJkyYcPRQ0fQzhLRqlRRS2M5edhIv9Lz0+FYA1LFp5V1ldWfsIMt/LNsU1dHeFb50ezRNUxayUuBk7BkAaGpqsmvR9MmhujMvNEzfFGY9INLRLf5Yy1Mcz3uWgVXa458tTKNYp9P9Irn7oY6tG5oBEru3oR3AqcXHfvJsCPNoIgho+3XTiT7HACg5eINyEkXs2P3AykzVXCqxQmPvICDhVbEX6+shlv516FvkJqvgplTA5L6urat2Fc5ecKIBXkhEmuzB1SqeGBAF5ZdDqyFOx1btfGlDe8mcws8pN53DdnygpQU2AOhUcrVOJ68xCNJ0nDUA0LnlqTVFk+ccbeZUnw+vp8SJD22i5EAbfMWzNWlmbT9z4DM5FLZ2kVIEW4k3zfCHl0MTQY8kAcvKygKfrUmV5gUskX4PgzeVBtLIXKm0hzzwIM/HgaNyRE2Zn04q8+ozir042icVFDNYGJ7VbfyTRffvvpkZejgtMmpioY9iloY+OAWOlJq8D/lvqGH4IPc1vCt9faD7DY5gxP2e9DWy2/HZSwo2TMjhup1DNPTd9cbkv7V0710bgjFvHRRRpp8/On3CzJNL0+d4pVgcMHGUCbdIg8R7MQa978UKNKwIAgky80yioKkziW8wNEl0JPi1Z7t0/RUPty8f7u+oS4yMrsKkcFiiq+vNn0umBl7vG9wjtfZvrNffP1AP/c5byZ83TyNC+m0H6+FWH0b694a+DG+4epM9BAcN/AP7lvkfwuGwAfwdwHS1fFoDownUgGnyjmYfX10am+2HU2IbOqelXz/hka1RlE4Tu7pKxOKijvDaFjxah5zB9o0b1W31oIYmULgB+rq6OiMdDMpOn48fSyYVGudpro+goWmacUezjzdOmKDR0KAyrzIP0TrAeCQWU988KrYgmUw6/cpMEQlpCqXzvM3rAeAnXSGaV1oq+qJR2puT457e3CxeKSkRe3NyuKFhmgtEdH14mlUYraY/J5Oqcbisd3l4mrWqwMczd/WHIXnDTcHXd67ritA6hERTaamYBmBdV5eeHIuRp6READuwN2eO2/AWRWNxW2Mw7SJuCwQskiPvaAABPz295qy6Mv5iicdeWO4nYZAGEUAQ+2iN3u0cOZLSOCh5wdDQSGuJ/rTGkGtsbonSrxc/Yy9FR0eCw5BEGJXb5bNbaD+i+P5pEyeU+NT4OLR8utm/rqGpaV+N/9/CNa/d8cLA4saWwV1Hqr0fnVazuNdWXFjg7arS9r97vcbm8+5v/p8jIfvB8yvXOo64J7yiteE9+3bDHsL9Z/s3VOfout1RMXThirxyoCPx/dDYefMq6RtHBen0PFMhk2yV6E0DKUfujmneK6FjyBDEoYUr72otTmtGymFHCtE64BqvbO1RL9y8qm39gWHLklGUM8gSwkcAw7Oa/tXiyk9PLrcWNQ/Qsqklps6X7tn/GHD1uq10+yem0gV/2Nb8m0sm15wylGLbkpjmMc0T465qrbCckEOedMrlLU/tit/1iQneb/ilaTX28JfPqMTJfVH3HAcG7lhv37R+z57kA+dWnXvsWM+nV7ckbrvmb+0vAaBHL6z+gmXJuaZg3tQpvleVo68p9PCEzW3xWyYXB27I9VLIEdS9pcOO5PqQnFTg+d5QWu19soO/fVqVcZ2raXbCdV+48IGW/waApy+t+VJJ0Dx+2au46XtP7eghAi8/b9wVBV6+2IKu60ipa/Mtz6wUxJz+pNoSNMWYIj/yNnbhlul54iJD6pOEgG7vCf7HVU9s6dKHHHoyQgh/WBzckGfF67qSIr096v3M4priM8fn6ctLLA1XK0AY2Jukto443f/3AfGXn2zO3bClc0v8g3yegoDVp8KYn6lCHNVrp9lXuY1GTA8T0ICKIJ2eijvjN+6SrxYZ6s5u4ElHK3HSROMHrpsed1xB0Tq4zgWkqTnPK8NJV93XPhh7sbTEv7ilB9dNKtXfPHmC79xtfe59x+TzL04sxHyvkvOUo9BpGz+980TgpAbA59Ghqnx9Xm4b/RnASwDYA1xpp507HZILJufri5uGzD8Vmqm7JhSZnycD8bStn1ZQ3VPyxbWCRHVvIp0KWuKkk8rkZzzSvXhPH981qHlDZkMZtEF82biAriMpv0+E7gcun1Kep9Lf6Iylzy/yWP/l0aooV9qfat4rv5kS3LUn7ciTKsRd5QaHBdO/9SfUr3MMnFEQVJcx8D/rDt3+3AABQI0vzN9ZYso5uR4l5lcHf1vmc+FqQIDQmfZ0bBvin/7xH3T3r15uGTiQTHDbEZwcbwNwG8Q6hNDd1MhLGqDfxxHwWUL4VwctadDLw5CPdgRuO2ds4j/PmqhvSbLqjKb0rhxB3aaB01IsHKQ51zIEvA5U2lF9r3bFH7712d72lUvG+z69qnnb6osr+5NJTK4KUBUMoyvHSqo0vKmAlx+6/q/NG0ZeM3bH3+363VH643WPtW0a8U5soZO9g8lNwUDgKKWcygqvc0VKm64XbqI77lYWFOhnfLboFMRTNDuWh4yt/ZqWbd+blCeN9w1cs7JlGcDop4zDvXpn6uxn98qx32vseAkATFuYlsGJOx/p2Pmdf6t2FXFenle+dMO61gcePLeqws2h71uGbC/OQdSx3WTScZ4eF/SXD6adwHAS5iCdNQwHG68PWctmji9cMqHAFa5iaDC6UzK2J0U/vfcV+cPfbmnuAoC19TC6m8BLGqCHw4QjN3NHRoKNxo/c2JNZ8xudIcOMe8BXT8+7tdhPkzqi7msFPktPzPWE05ALegfpq9Liropiz3+wFsV9UVoJKfJd6BeOeT0+WDktMP8zMwuv7U9a9p6UWlbqp/P7E1rFlCmHlIj2J3XbrEsHm5sSQFMTuKU7YT+yY6gdAE8vhWhoAp9Tm3squ+IZbRr5SU2G15ITbQfpFJnBgaRoD1jW651RVykyAl1p83clfr7eo43Je5XcmmsZeRcfVfLk5G29bmTY0Na0xeMrX491jNzflHu6BxbVBEvPO7rg3wt9hrEnzo/GHZqcFxj6W8DKrzWEuNKG7kmytBwlo16Psz7qeqoTSvTfv21w89nHgRqa9htxQxO4vh7iC/f1b5+Y6+3UJCq7U3r361HzZz9/Rd10/RO7/7Slsz++NgRjWQt4fCP0gddnkcVHAsvCE8cCwFOfGv/rNZdPuBnY/x6AW0+fkHe4lNftodrKkd+vCtV4v/aJ6oIvz5oVOJxT8nbvLAzVwPvfoZr8N5FBALD4uMLcX55Xkz8SNh+anzrcexEX18JziCwCgPC0kmD94trc82ry8t8VmR4mL8b/pJe7ZpHFP8VjeO4zUy9eedmUOiBzcOfIoaL0JtlhOiA2PvQI8ndqEQctovHBl9Gb9O9Ag6R3cV8jIg+87lDDpXfZdw5DCsok89bWw6jPvn8ki49TSuEtPtM7nCnpwNn3ffTjrWS8X/nvtr0ssvjX9hIOnamzyCKLLLLIIossssgiiyyyyCKLLLLIIossssjiQ8X/B04rCZA8itfJAAAAAElFTkSuQmCC" width="220" alt="BMB Deutschland">
-            </div>
-            <div class="dc-headline">
-              <h2>Ihr Whitepaper ist unterwegs,</h2>
-              <p class="dc-name" id="dankeName"></p>
-              <p class="dc-sub">Bitte prüfen Sie Ihren Posteingang —<br>im Zweifel auch den Spam-Ordner.</p>
-            </div>
-            <hr class="dc-hr">
-            <p class="dc-label">Im Whitepaper</p>
-            <table cellpadding="0" cellspacing="0" width="100%">
-              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">HumanFit Matrix: 5 Realit&auml;ten &times; 8 Bed&uuml;rfnisdimensionen</td></tr>
-              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">Hotspot B2 &times; D2/D3/D6/D8 &mdash; der aggressivste Cluster</td></tr>
-              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">8 Fr&uuml;hwarnsignale &mdash; konkret und sofort beobachtbar</td></tr>
-              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">Maschinenbau-Case: 140 Agents, 6 Wochen, messbare Ergebnisse</td></tr>
-              <tr><td width="20" style="vertical-align:top;"><div class="dc-dot"></div></td><td style="padding-bottom:9px;font-size:14px;color:#374151;line-height:1.5;">5 Selbstdiagnose-Fragen &mdash; f&uuml;r heute, nach diesem Lesen</td></tr>
-            </table>
-            <hr class="dc-hr">
-            <p class="dc-label">N&auml;chster Schritt</p>
-            <table cellpadding="0" cellspacing="0" width="100%"><tr>
-              <td style="padding-right:10px;width:50%;"><a href="https://meetings-eu1.hubspot.com/marc-bergmann" class="dc-cta dc-cta-orange">Termin vereinbaren &rarr;</a></td>
-              <td style="width:50%;"><a href="https://www.linkedin.com/in/marc-bergmann-631650143/" class="dc-cta dc-cta-blue">in LinkedIn verbinden</a></td>
-            </tr></table>
-          </div>
-          <div class="dc-footer">
-            Marc Bergmann &middot; BMB Deutschland GmbH &middot; Mittelstra&szlig;e 23 &middot; 40721 Hilden<br>
-            <a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a> &nbsp;&middot;&nbsp;
-            <a href="https://www.bmbdeutschland.de/datenschutz">Datenschutz</a>
-          </div>
-        </div>
-      </div>
-
+    <div class="gsi">
+      <div class="gsn">2</div>
+      <h4>HumanFit KI Check</h4>
+      <p>GPT-gestütztes DeepDive Interview. Validiertes Bedürfnisprofil in 20 Min. DSGVO-konform.</p>
+      <span class="badge ok">✓ Auf Anfrage</span>
+    </div>
+    <div class="gsi">
+      <div class="gsn">3</div>
+      <h4>Workshop</h4>
+      <p>Team- &amp; Organisationsdiagnose. Gemeinsame Verortung, kollektive Diagnose, konkrete Hebel.</p>
+      <span class="badge ok">✓ Verfügbar</span>
+    </div>
+    <div class="gsi">
+      <div class="gsn">4</div>
+      <h4>Guided Outcomes</h4>
+      <p>Vom Befund zur Wirkung in 30 Tagen. Fixpreis. Ergebnisgarantie.</p>
+      <span class="badge ok">✓ Verfügbar</span>
     </div>
   </div>
-
-  <!-- Quellenverzeichnis -->
-  <div class="src-block fi">
-    <h4>Quellenverzeichnis</h4>
-    <p>Bundesverband der Deutschen Industrie (2025), <em>Industriereport 2024/25</em>, bdi.eu &nbsp;·&nbsp; Gallup (2024), <em>State of the Global Workplace Report</em>, gallup.com &nbsp;·&nbsp; Gartner (2022), <em>Why Chatbots Fail</em>, gartner.com &nbsp;·&nbsp; Hamel, G. &amp; Zanini, M. (2020), <em>Humanocracy</em>, Harvard Business Review Press &nbsp;·&nbsp; McKinsey &amp; Company (2023), <em>The State of Customer Care</em>, mckinsey.com &nbsp;·&nbsp; Seligman, M.E.P. (1975/2006), <em>Learned Helplessness</em>, Oxford University Press &nbsp;·&nbsp; World Economic Forum (2023), <em>Future of Jobs Report</em>, weforum.org</p>
+  <div style="text-align:center;margin-top:32px" class="fi">
+    <a href="mailto:info@bmb-deutschland.de" class="btn btn-p">Erstgespräch vereinbaren →</a>
   </div>
 </div>
 </section>
@@ -949,7 +871,7 @@ img{max-width:100%;display:block;height:auto}
     <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO.<br><br>
     <strong>Speicherdauer:</strong> Bis Widerruf / 24 Monate nach letzter Aktivität.<br><br>
     <strong>Weitergabe:</strong> Keine. Technischer Dienstleister mit AVV (Brevo / Sendinblue SAS).<br><br>
-    <strong>Ihre Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerruf an <a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a>.<br><br>
+    <strong>Ihre Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Widerruf an <a href="/cdn-cgi/l/email-protection#553c3b333a153738373130202126363d39343b317b3130"><span class="__cf_email__" data-cfemail="8ce5e2eae3cceee1eee8e9f9f8ffefe4e0ede2e8a2e8e9">[email&#160;protected]</span></a>.<br><br>
     <strong>Beschwerderecht:</strong> LDI NRW.
   </p>
 </div>
@@ -961,7 +883,7 @@ img{max-width:100%;display:block;height:auto}
   <div class="ft-i">
     <div class="ft-l">
       <strong>© 2026 BMB Deutschland GmbH</strong><br>
-      Mittelstraße 23 · 40721 Hilden · <a href="mailto:info@bmbdeutschland.de">info@bmbdeutschland.de</a>
+      Mittelstraße 23 · 40721 Hilden · <a href="/cdn-cgi/l/email-protection#771e19111837151a151312020304141f1b161913591312"><span class="__cf_email__" data-cfemail="056c6b636a456768676160707176666d69646b612b6160">[email&#160;protected]</span></a>
     </div>
     <ul class="ft-lk">
       <li><a href="#" onclick="document.getElementById('dm').style.display='flex';return false">Datenschutz</a></li>
@@ -972,7 +894,7 @@ img{max-width:100%;display:block;height:auto}
 </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── NAV TOGGLE ──
 document.getElementById('nT').addEventListener('click', function(){
   document.getElementById('nL').classList.toggle('open');
@@ -988,81 +910,36 @@ var obs = new IntersectionObserver(function(entries){
 }, {threshold:.08, rootMargin:'0px 0px -32px 0px'});
 document.querySelectorAll('.fi').forEach(function(el){ obs.observe(el); });
 
-// ── FORM SUBMIT ──
-document.getElementById('cF').addEventListener('submit', function(e){
-  e.preventDefault();
-  var f = this, valid = true;
-
-  // Reset styles
-  f.querySelectorAll('input,select,textarea').forEach(function(i){
-    i.style.borderColor = '';
-  });
-
-  // Validate required fields
-  f.querySelectorAll('[required]').forEach(function(i){
-    if(i.type === 'checkbox'){
-      if(!i.checked){ i.parentElement.style.outline = '2px solid #c0392b'; valid = false; }
-      else { i.parentElement.style.outline = ''; }
-    } else {
-      if(!i.value.trim()){ i.style.borderColor = '#c0392b'; valid = false; }
-    }
-  });
-
-  // Validate email
-  var em = f.querySelector('[name=email]');
-  if(em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)){ em.style.borderColor = '#c0392b'; valid = false; }
-
-  // Validate telefon
-  var ph = f.querySelector('[name=telefon]');
-  if(ph && ph.value.trim().length < 6){ ph.style.borderColor = '#c0392b'; valid = false; }
-
-  if(!valid) return;
-
-  var btn = document.getElementById('sB');
-  btn.disabled = true;
-  btn.textContent = 'Wird gesendet...';
-
-  // Collect ALL form data
-  var payload = {
-    vorname:      f.querySelector('[name=vorname]').value.trim(),
-    nachname:     f.querySelector('[name=nachname]').value.trim(),
-    email:        f.querySelector('[name=email]').value.trim(),
-    telefon:      f.querySelector('[name=telefon]').value.trim(),
-    unternehmen:  f.querySelector('[name=unternehmen]').value.trim(),
-    position:     f.querySelector('[name=position]').value.trim(),
-    branche:      f.querySelector('[name=branche]').value,
-    groesse:      f.querySelector('[name=groesse]').value,
-    nachricht:    f.querySelector('[name=nachricht]').value.trim(),
-    newsletter:   f.querySelector('[name=newsletter]').checked ? 'ja' : 'nein',
-    notify_check: f.querySelector('[name=notify_check]').checked ? 'ja' : 'nein'
-  };
-
-  fetch('/api/subscribe', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  })
-  .then(function(r){ return r.json(); })
-  .then(function(d){
-    btn.disabled = false;
-    btn.textContent = 'Whitepaper anfordern →';
-    if(d.success){
-      f.style.display = 'none';
-      var dankeBox = document.getElementById('dankebox');
-      dankeBox.style.display = 'block';
-      document.getElementById('dankeName').textContent = payload.vorname + ' ' + payload.nachname;
-      dankeBox.scrollIntoView({ behavior:'smooth', block:'start' });
-    } else {
-      var errMsg = document.getElementById('fE');
-      errMsg.style.display = 'block';
-    }
-  })
-  .catch(function(){
-    btn.disabled = false;
-    btn.textContent = 'Whitepaper anfordern →';
-    document.getElementById('fE').style.display = 'block';
-  });
-});
 </script>
+
+<script>
+(function(){
+  // Auto-height for matrix iframe
+  window.addEventListener('message',function(e){
+    if(e.data&&e.data.type==='iframeHeight'){
+      var f=document.getElementById(e.data.id);
+      if(f&&e.data.height>200) f.style.height=(e.data.height+20)+'px';
+    }
+  });
+  // Fallback: measure iframe content after load
+  var mf = document.getElementById('matrixFrame');
+  if(mf) mf.addEventListener('load', function(){
+    [200,600,1200,2000].forEach(function(t){
+      setTimeout(function(){
+        try{
+          var h=mf.contentWindow.document.body.scrollHeight;
+          if(h>300) mf.style.height=(h+20)+'px';
+        }catch(e){}
+      },t);
+    });
+  });
+  // Hard fallback after 4s
+  setTimeout(function(){
+    var f=document.getElementById('matrixFrame');
+    if(f&&parseInt(f.style.height||0)<400) f.style.height='1300px';
+  },4000);
+})();
+</script>
+
 </body>
 </html>
